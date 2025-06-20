@@ -6,7 +6,7 @@ export default function TerminosCondiciones() {
       <div className="legal-container">
         <h1 className="legal-title">Términos y Condiciones</h1>
         <div className="legal-content">
-          <p>Bienvenido a **Cyber Código**. Al contratar cualquiera de nuestros servicios, usted ("el Cliente") acepta y se compromete a cumplir los siguientes términos y condiciones que rigen nuestra relación profesional.</p>
+          <p>Bienvenido a **Cyber Código**. Al contratar cualquiera de nuestros servicios, usted ('el Cliente') acepta y se compromete a cumplir los siguientes términos y condiciones que rigen nuestra relación profesional.</p>
 
           <h2 className="legal-subtitle">1. Servicios Ofrecidos</h2>
           <p>Nos especializamos en el diseño, desarrollo y mantenimiento de sitios web, tiendas en línea (e-commerce) y aplicaciones web personalizadas. El alcance, características y entregables de cada proyecto se detallarán en una cotización o propuesta formal que deberá ser aprobada por el Cliente antes de iniciar el trabajo.</p>

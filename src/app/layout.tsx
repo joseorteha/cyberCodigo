@@ -4,7 +4,6 @@ import "./../scss/main.scss";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const poppins = Poppins({
   subsets: ["latin"],

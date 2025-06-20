@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import '../scss/Portfolio.scss';
 
@@ -52,7 +53,7 @@ const Portfolio = () => (
             transition={{ delay: idx * 0.15, duration: 0.6 }}
           >
             <a href={project.url} target="_blank" rel="noopener noreferrer">
-              <img src={project.img} alt={project.name} className="portfolio-img" />
+              <Image src={project.img} alt={project.name} width={800} height={600} className="portfolio-img" />
             </a>
             <div className="portfolio-info">
               <h3 className="portfolio-name">{project.name}</h3>

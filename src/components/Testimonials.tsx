@@ -15,7 +15,7 @@ interface TestimonialCardProps {
 const TestimonialCard: React.FC<TestimonialCardProps> = ({ quote, author, title, imgSrc }) => (
   <div className="testimonial-card">
     <Image src={imgSrc} alt={author} width={64} height={64} className="testimonial-img" />
-    <p className="testimonial-quote">"{quote}"</p>
+    <p className="testimonial-quote">&ldquo;{quote}&rdquo;</p>
     <div>
       <p className="testimonial-author">{author}</p>
       <p className="testimonial-title">{title}</p>

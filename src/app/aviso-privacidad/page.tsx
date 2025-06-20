@@ -6,7 +6,7 @@ export default function AvisoPrivacidad() {
       <div className="legal-container">
         <h1 className="legal-title">Aviso de Privacidad</h1>
         <div className="legal-content">
-          <p>En **Cyber Código** ("nosotros", "nuestro"), con domicilio en Zongolica, Veracruz, estamos comprometidos con la protección de su privacidad y el tratamiento legítimo de sus datos personales. Este Aviso de Privacidad detalla cómo recopilamos, utilizamos y protegemos la información que nos proporciona a través de nuestro sitio web y servicios de desarrollo.</p>
+          <p>En **Cyber Código** ('nosotros', 'nuestro'), con domicilio en Zongolica, Veracruz, estamos comprometidos con la protección de su privacidad y el tratamiento legítimo de sus datos personales. Este Aviso de Privacidad detalla cómo recopilamos, utilizamos y protegemos la información que nos proporciona a través de nuestro sitio web y servicios de desarrollo.</p>
 
           <h2 className="legal-subtitle">1. Datos Personales que Recopilamos</h2>
           <p>Podemos recopilar la siguiente información:</p>
