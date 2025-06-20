@@ -5,28 +5,28 @@ import '../scss/Portfolio.scss';
 
 const projects = [
   {
-    name: 'Click Mail',
+    name: 'ClickMail',
     url: 'https://click-mail.netlify.app/',
-    img: 'https://click-mail.netlify.app/og-image.png',
-    desc: 'Plataforma de mailing y automatización para negocios.'
+    img: '/clickmail.png',
+    desc: 'Desarrollamos una plataforma intuitiva para la automatización de campañas de email marketing, ayudando a negocios a conectar con su audiencia.'
   },
   {
-    name: 'Barberzon',
+    name: 'Barbería Premium',
     url: 'https://barberzon.netlify.app/',
-    img: 'https://barberzon.netlify.app/og-image.jpg',
-    desc: 'Sitio web para barbería premium en Orizaba.'
+    img: '/barberia.png',
+    desc: 'Diseñamos un sitio web elegante y moderno para una barbería, con un sistema de reservas que optimizó su flujo de clientes.'
   },
   {
     name: 'FitFlow',
     url: 'https://fitflow-u5cv.onrender.com/',
-    img: 'https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=400&q=80',
-    desc: 'Plataforma de rutinas fitness y bienestar.'
+    img: '/fitflow.png',
+    desc: 'Creamos una aplicación web para un gimnasio, permitiendo a los miembros acceder a rutinas personalizadas y seguir su progreso.'
   },
   {
-    name: 'Guau Miau',
+    name: 'Guau & Miau',
     url: 'https://guau-miau.netlify.app/',
-    img: 'https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=400&q=80',
-    desc: 'Landing para veterinaria y tienda de mascotas.'
+    img: '/guauymiau.png',
+    desc: 'Construimos una landing page amigable para una veterinaria, destacando sus servicios y facilitando el contacto con nuevos clientes.'
   },
 ];
 

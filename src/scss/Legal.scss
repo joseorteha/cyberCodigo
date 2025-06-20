@@ -1,0 +1,108 @@
+/* Estilos para las páginas legales (Aviso de Privacidad y Términos y Condiciones) */
+
+.legal-section {
+  padding: 6rem 1rem 4rem;
+  background: var(--background-light);
+  min-height: 80vh;
+}
+
+.dark .legal-section {
+  background: var(--background-dark);
+}
+
+.legal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--card-light);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-light);
+}
+
+.dark .legal-container {
+  background: var(--card-dark);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-color: var(--border-dark);
+}
+
+.legal-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.legal-subtitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color-light);
+}
+
+.legal-content p,
+.legal-content li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-gray-dark);
+  margin-bottom: 1rem;
+}
+
+.legal-content ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.legal-content a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+  
+  &:hover {
+    color: var(--primary-color-dark);
+    text-decoration: underline;
+  }
+}
+
+.last-updated {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-gray-light);
+}
+
+
+/* Dark mode styles */
+
+.dark .legal-title {
+  color: var(--text-light);
+}
+
+.dark .legal-subtitle {
+  color: var(--primary-color-light);
+  border-bottom-color: var(--primary-color-dark);
+}
+
+.dark .legal-content p,
+.dark .legal-content li {
+  color: var(--text-gray-light);
+}
+
+.dark .legal-content a {
+  color: var(--primary-color-light);
+
+  &:hover {
+    color: var(--text-light);
+  }
+}
+
+.dark .last-updated {
+  color: var(--text-gray-dark);
+} 

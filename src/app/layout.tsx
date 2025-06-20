@@ -13,10 +13,16 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Cyber Código - Desarrollo Web en Zongolica",
-  description: "Páginas web profesionales para negocios locales en Zongolica, Veracruz. Desde $999 MXN.",
+  title: "Cyber Código - Desarrollo Web Profesional",
+  description: "Transformamos ideas en soluciones digitales. Diseño y desarrollo de páginas web, e-commerce y aplicaciones a la medida para potenciar tu negocio.",
+  metadataBase: new URL('https://cybercodigo.dev'),
+  openGraph: {
+    title: 'Cyber Código - Desarrollo Web Profesional',
+    description: 'Soluciones digitales a la medida para tu negocio.',
+    images: '/LOGO.jpg', 
+  },
   icons: {
-    icon: '/favicon.ico',
+    icon: '/LOGO.jpg',
   }
 };
 

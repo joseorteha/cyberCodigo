@@ -16,6 +16,7 @@
 @use 'Portfolio';
 @use 'Process';
 @use 'QuoteCalculator';
+@use 'Legal';
 
 /* CSS Reset and Global Styles */
 html, body {
@@ -54,4 +55,8 @@ body, #__next {
 
 main {
   flex: 1; /* El contenido principal crece para ocupar el espacio */
+}
+
+:root {
+  --font-sans: 'Poppins', sans-serif;
 }
