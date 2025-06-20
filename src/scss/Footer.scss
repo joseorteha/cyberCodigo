@@ -1,0 +1,143 @@
+.footer {
+  background: #f1f5f9;
+  color: #222;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.dark .footer {
+  background: #18181b;
+  color: #eee;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem 1rem 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    text-align: left;
+  }
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 768px) {
+    align-items: flex-start;
+  }
+}
+
+.footer-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.footer-logo {
+  border-radius: 50%;
+}
+
+.footer-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #222;
+}
+
+.footer-desc {
+  color: #666;
+  max-width: 250px;
+}
+
+.footer-contact {
+}
+
+.footer-heading {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-link {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.footer-link:hover {
+  color: #222;
+}
+.dark .footer-link {
+  color: #bbb;
+}
+.dark .footer-link:hover {
+  color: #fff;
+}
+
+.footer-social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  @media (min-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
+.footer-legal {
+  margin: 2rem 0 0.5rem 0;
+  text-align: center;
+}
+
+.footer-legal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.footer-legal-link {
+  color: #2563eb;
+  text-decoration: underline;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.footer-legal-link:hover {
+  color: #1d4ed8;
+}
+
+.footer-bottom {
+  border-top: 1px solid #e5e7eb;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+}
+.dark .footer-bottom {
+  border-top: 1px solid #333;
+  color: #bbb;
+} 
+

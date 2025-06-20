@@ -1,0 +1,57 @@
+// Base styles and variables
+// @import 'variables'; // Si tienes variables globales, irían aquí
+// @import 'globals';   // Si tienes estilos globales, irían aquí
+
+// Component styles
+@use 'Header';
+@use 'Hero';
+@use 'WhyChooseUs';
+@use 'Packages';
+@use 'Testimonials';
+@use 'Footer';
+@use 'WhatsAppButton';
+@use 'ThemeToggle';
+@use 'Extras';
+@use 'FAQ';
+@use 'Portfolio';
+@use 'Process';
+@use 'QuoteCalculator';
+
+/* CSS Reset and Global Styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Evita el scroll horizontal */
+  box-sizing: border-box;
+  font-family: var(--font-sans), sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 16px 16px;
+  color: #222;
+}
+
+.dark body {
+  background-color: #18181b;
+  background-image: radial-gradient(#27272a 1px, transparent 1px);
+  color: #eee;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Forzamos que el body y la app ocupen toda la altura */
+body, #__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* El contenido principal crece para ocupar el espacio */
+}

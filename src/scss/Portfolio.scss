@@ -1,0 +1,148 @@
+.portfolio-section {
+  background: transparent;
+  padding: 5rem 0 4rem 0;
+  width: 100%;
+}
+
+.dark .portfolio-section {
+  background: transparent;
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.portfolio-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #222;
+  text-align: center;
+}
+
+.dark .portfolio-title {
+  color: #fff;
+}
+
+.portfolio-desc {
+  color: #666;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.dark .portfolio-desc {
+  color: #bbb;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  @media (min-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1100px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.portfolio-card {
+  background: #f8fafc;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.18s, box-shadow 0.18s;
+  border: 1.5px solid #e5e7eb;
+}
+
+.dark .portfolio-card {
+  background: #23232a;
+  border: 1.5px solid #333;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.18);
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(37,99,235,0.10);
+}
+
+.dark .portfolio-card:hover {
+  box-shadow: 0 8px 32px 0 rgba(37,99,235,0.18);
+}
+
+.portfolio-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: #e5e7eb;
+}
+
+.dark .portfolio-img {
+  background: #23232a;
+}
+
+.portfolio-info {
+  padding: 1.2rem 1rem 1.5rem 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.portfolio-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.dark .portfolio-name {
+  color: #fff;
+}
+
+.portfolio-text {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.dark .portfolio-text {
+  color: #bbb;
+}
+
+.portfolio-btn {
+  display: inline-block;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.7rem;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.18s;
+}
+
+.portfolio-btn:hover {
+  background: #1d4ed8;
+}
+
+.dark .portfolio-title {
+  color: #eee;
+}
+
+.dark .portfolio-desc {
+  color: #bbb;
+}
+
+.dark .portfolio-name {
+  color: #fff;
+}
+
+.dark .portfolio-text {
+  color: #bbb;
+} 

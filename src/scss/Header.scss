@@ -1,0 +1,65 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: background 0.3s, box-shadow 0.3s;
+  background: transparent;
+  width: 100%;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+
+.dark .header {
+  background: #18181b;
+}
+
+.header.scrolled {
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);
+}
+
+.header-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.brand-img {
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.brand-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.brand-title.scrolled {
+  color: #222;
+}
+
+/* Modo oscuro */
+.dark .header.scrolled {
+  background: rgba(34,34,34,0.95);
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.18);
+}
+.dark .brand-title.scrolled {
+  color: #fff;
+} 
