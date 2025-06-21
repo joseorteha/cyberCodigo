@@ -105,7 +105,7 @@ const TestimonialForm = () => {
           </div>
         )}
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} data-netlify="false">
           <div className="form-group">
             <label htmlFor="name">Nombre completo *</label>
             <input
