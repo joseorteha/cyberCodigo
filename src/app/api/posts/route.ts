@@ -5,9 +5,9 @@ export const dynamic = 'force-dynamic';
 
 // No exponer estas claves en el lado del cliente
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseServiceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
-const supabaseAdmin = createClient(supabaseUrl, supabaseServiceRoleKey);
+const supabaseAdmin = createClient(supabaseUrl, supabaseServiceKey);
 
 // GET: Obtener todos los posts
 export async function GET() {

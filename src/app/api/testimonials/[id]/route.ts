@@ -1,12 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
 
-// Crear el cliente de Supabase con la clave de servicio para tener permisos de administrador
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_KEY!
-);
-
 /**
  * Maneja la actualización (aprobación) de un testimonio.
  */
@@ -14,6 +8,10 @@ export async function PATCH(
   request: Request,
   context: { params: { id: string } }
 ) {
+  const supabaseAdmin = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
   const { id } = context.params;
 
   try {
@@ -38,6 +36,10 @@ export async function DELETE(
   request: Request,
   context: { params: { id: string } }
 ) {
+  const supabaseAdmin = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  );
   const { id } = context.params;
 
   try {

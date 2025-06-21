@@ -3,14 +3,17 @@ import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
-// Crear un cliente de Supabase específico para esta ruta de API, usando las claves de entorno.
-// ¡Importante! Usamos la clave de servicio (service_key) para obtener acceso de administrador.
-const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
 export async function GET() {
+  // La inicialización del cliente se mueve DENTRO de la función.
+  // Esto asegura que las variables de entorno estén disponibles cuando se ejecute.
+  const supabaseAdmin = createClient(
+    supabaseUrl,
+    supabaseServiceKey // Revertido para coincidir con la configuración local
+  );
+
   try {
     const { data, error } = await supabaseAdmin
       .from('testimonials')
