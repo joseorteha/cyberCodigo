@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server';
 
 // Crear el cliente de Supabase con la clave de servicio para tener permisos de administrador
 const supabaseAdmin = createClient(
@@ -11,7 +12,7 @@ const supabaseAdmin = createClient(
  * Maneja la actualización (aprobación) de un testimonio.
  */
 export async function PATCH(
-  request: Request,
+  request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   const { id } = params;
@@ -35,7 +36,7 @@ export async function PATCH(
  * Maneja la eliminación de un testimonio y su imagen asociada.
  */
 export async function DELETE(
-  request: Request,
+  request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   const { id } = params;
