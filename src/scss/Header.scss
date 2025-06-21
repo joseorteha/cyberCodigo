@@ -1,24 +1,26 @@
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 50;
-  transition: background 0.3s, box-shadow 0.3s;
-  background: transparent;
   width: 100%;
-  left: 0;
-  margin: 0;
-  padding: 0;
+  z-index: 50;
+  transition: background-color 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  padding: 1rem 0;
 }
 
-
 .dark .header {
-  background: #18181b;
+  background: transparent;
 }
 
 .header.scrolled {
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dark .header.scrolled {
+  background-color: rgba(13, 17, 23, 0.75);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .header-nav {
@@ -56,10 +58,6 @@
 }
 
 /* Modo oscuro */
-.dark .header.scrolled {
-  background: rgba(34,34,34,0.95);
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.18);
-}
 .dark .brand-title.scrolled {
   color: #fff;
 } 

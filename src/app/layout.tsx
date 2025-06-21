@@ -4,6 +4,7 @@ import "./../scss/main.scss";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import AnimatedBackground from '@/components/AnimatedBackground';
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${poppins.variable} font-sans antialiased`}>
+        <AnimatedBackground />
         <Header />
         <main>{children}</main>
         <Footer />
