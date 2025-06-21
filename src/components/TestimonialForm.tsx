@@ -158,14 +158,22 @@ const TestimonialForm = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="image">Foto de perfil (opcional)</label>
-            <input
-              type="file"
-              id="image"
-              name="image"
-              onChange={handleImageChange}
-              accept="image/*"
-            />
+            <label>Foto de perfil (opcional)</label>
+            <div className="file-input-wrapper">
+              <input
+                type="file"
+                id="image"
+                name="image"
+                onChange={handleImageChange}
+                accept="image/*"
+              />
+              <label htmlFor="image" className="file-input-label">
+                <span>
+                  {formData.image ? 'Archivo seleccionado:' : 'Haz clic para seleccionar un archivo'}
+                </span>
+                {formData.image && <span className="file-name">{formData.image.name}</span>}
+              </label>
+            </div>
             <small>Formatos: JPG, PNG, GIF. Máximo 5MB</small>
           </div>
 

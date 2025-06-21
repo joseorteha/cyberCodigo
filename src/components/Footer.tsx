@@ -35,39 +35,51 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-columns">
-          <div className="footer-column logo-column">
-            <Link href="/" className="footer-logo">
-              <Image src="/LOGO.jpg" alt="Cyber Código Logo" width={50} height={50} />
-              <span>Cyber Código</span>
+        <div className="footer-grid">
+          {/* Column 1: Brand */}
+          <div className="footer-brand">
+            <Link href="/" className="footer-brand-link">
+              <Image src="/LOGO.jpg" alt="Cyber Código Logo" width={40} height={40} className="footer-logo" />
+              <span className="footer-title">Cyber Código</span>
             </Link>
-            <p className="footer-tagline">Creamos soluciones digitales a la medida de tus sueños.</p>
+            <p className="footer-desc">
+              Creamos soluciones digitales a la medida de tus sueños, con la calidez y el compromiso de nuestra gente.
+            </p>
           </div>
-          <div className="footer-column">
-            <h4>Navegación</h4>
-            <ul className="footer-links">
-              <li><Link href="/nosotros">Nosotros</Link></li>
-              <li><Link href="/#portfolio">Portafolio</Link></li>
-              <li><Link href="/blog">Blog</Link></li>
-              <li><Link href="/#contact">Contacto</Link></li>
+
+          {/* Column 2: Navegación */}
+          <div className="footer-links-column highlight-links">
+            <h3 className="footer-heading">Navegación</h3>
+            <ul className="footer-list">
+              <li><Link href="/nosotros" className="footer-link">Nosotros</Link></li>
+              <li><Link href="/#portfolio" className="footer-link">Portafolio</Link></li>
+              <li><Link href="/blog" className="footer-link">Blog</Link></li>
+              <li><Link href="/testimonios" className="footer-link">Testimonios</Link></li>
             </ul>
           </div>
-          <div className="footer-column">
-            <h4>Legal</h4>
-            <ul className="footer-links">
-              <li><Link href="/aviso-privacidad">Aviso de Privacidad</Link></li>
-              <li><Link href="/terminos-condiciones">Términos y Condiciones</Link></li>
+
+          {/* Column 3: Legal */}
+          <div className="footer-links-column highlight-links">
+            <h3 className="footer-heading">Legal</h3>
+            <ul className="footer-list">
+              <li><Link href="/aviso-privacidad" className="footer-link">Aviso de Privacidad</Link></li>
+              <li><Link href="/terminos-condiciones" className="footer-link">Términos y Condiciones</Link></li>
             </ul>
           </div>
-          <div className="footer-column">
-            <h4>Síguenos</h4>
-            <div className="social-icons">
-               {/* Puedes agregar tus redes aquí */}
-            </div>
+
+          {/* Column 4: Contacto */}
+          <div className="footer-contact-column">
+            <h3 className="footer-heading">Contacto</h3>
+            <ul className="footer-list">
+              <li><a href="mailto:contacto@cybercodigo.dev" className="footer-link">contacto@cybercodigo.dev</a></li>
+              <li><a href={whatsappLink} target="_blank" className="footer-link">WhatsApp</a></li>
+              <li><a href={portfolioLink} target="_blank" className="footer-link">Portafolio Personal</a></li>
+            </ul>
           </div>
+
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Cyber Código. Todos los derechos reservados.</p>
+          <p>&copy; {year} Cyber Código. Todos los derechos reservados. Hecho con ❤️ desde Zongolica, Veracruz.</p>
         </div>
       </div>
     </footer>
