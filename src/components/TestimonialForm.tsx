@@ -105,7 +105,19 @@ const TestimonialForm = () => {
           </div>
         )}
 
-        <form onSubmit={handleSubmit} data-netlify="false">
+        <form 
+          onSubmit={handleSubmit} 
+          data-netlify="false"
+          netlify-honeypot="bot-field"
+        >
+          {/* Campo oculto para Netlify */}
+          <input type="hidden" name="form-name" value="testimonial" />
+          <p hidden>
+            <label>
+              Don't fill this out if you're human: <input name="bot-field" />
+            </label>
+          </p>
+
           <div className="form-group">
             <label htmlFor="name">Nombre completo *</label>
             <input
