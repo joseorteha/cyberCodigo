@@ -22,7 +22,8 @@ export async function GET() {
     }
 
     return NextResponse.json(data);
-  } catch (error: any) {
-    return NextResponse.json({ message: `Error fetching testimonials: ${error.message}` }, { status: 500 });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Ocurrió un error desconocido';
+    return NextResponse.json({ message: `Error fetching testimonials: ${message}` }, { status: 500 });
   }
 } 

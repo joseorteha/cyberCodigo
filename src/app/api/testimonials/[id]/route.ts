@@ -25,8 +25,9 @@ export async function PATCH(
     if (error) throw error;
 
     return NextResponse.json({ message: 'Testimonio aprobado exitosamente' });
-  } catch (error: any) {
-    return NextResponse.json({ message: `Error al aprobar: ${error.message}` }, { status: 500 });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Ocurrió un error desconocido';
+    return NextResponse.json({ message: `Error al aprobar: ${message}` }, { status: 500 });
   }
 }
 
@@ -65,7 +66,8 @@ export async function DELETE(
     if (deleteError) throw deleteError;
 
     return NextResponse.json({ message: 'Testimonio eliminado exitosamente' });
-  } catch (error: any) {
-    return NextResponse.json({ message: `Error al eliminar: ${error.message}` }, { status: 500 });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Ocurrió un error desconocido';
+    return NextResponse.json({ message: `Error al eliminar: ${message}` }, { status: 500 });
   }
 } 
