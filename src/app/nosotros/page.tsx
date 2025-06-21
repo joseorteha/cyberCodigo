@@ -1,56 +1,70 @@
-import React from 'react';
+import Head from 'next/head';
+import { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
-import '../../scss/Legal.scss'; // Reutilizaremos estilos de las páginas legales
+import { FaGithub, FaLinkedin, FaFacebook, FaInstagram, FaTiktok } from 'react-icons/fa';
+import { FaGlobe } from 'react-icons/fa';
 
-const SobreNosotrosPage = () => {
+export const metadata: Metadata = {
+  title: 'Nosotros | Cyber Código',
+  description: 'Nacimos en las montañas de Zongolica, Veracruz. Somos un equipo apasionado por la tecnología y con la misión de construir puentes digitales para negocios locales y globales.',
+};
+
+const NosotrosPage = () => {
   return (
-    <div className="legal-container">
-      <div className="legal-content">
-        <div style={{ textAlign: 'center', margin: '1rem 0 2rem' }}>
-          <Image 
-            src="/LOGO.jpg"
-            alt="José Ortega - Fundador de Cyber Código"
-            width={150}
-            height={150}
-            style={{ borderRadius: '50%', border: '4px solid #6366f1', boxShadow: '0 4px 15px rgba(99, 102, 241, 0.3)' }}
-          />
+    <>
+      <Head>
+        <title>{metadata.title as string}</title>
+        <meta name="description" content={metadata.description as string} />
+      </Head>
+      <main className="about-section">
+        <div className="about-container">
+          <header className="about-header">
+            <p className="subtitle">Nuestra Historia</p>
+            <h1 className="title">Conectando Raíces con el Futuro Digital</h1>
+          </header>
+
+          <article className="about-content">
+            <p>
+              <strong>Cyber Código</strong> no nació en un garaje de Silicon Valley, sino con el aroma a café recién molido que perfuma las altas montañas de <strong>Zongolica, Veracruz</strong>. Somos un proyecto forjado con el carácter de nuestra gente: gente trabajadora que nos enseñó el valor de la palabra, la importancia de un apretón de manos y el orgullo por el trabajo bien hecho.
+            </p>
+            <p>
+              Crecimos viendo el inmenso talento de los artesanos, los productores y los soñadores de nuestra tierra. Y vimos también una brecha invisible: una desconexión con el universo digital que limitaba su potencial para brillar. Así nació nuestra misión: <strong>ser el puente entre la tradición y la tecnología</strong>. Usamos el código no como un fin, sino como un lenguaje para contar historias, para abrir mercados y para demostrar que las grandes ideas florecen en cualquier rincón del mundo, especialmente aquí, donde el aire es más puro.
+            </p>
+            <p>
+              Cada proyecto que emprendemos lleva impregnada esa esencia. Combinamos la <strong>precisión técnica del desarrollo de software</strong> con la <strong>creatividad, la calidez y el corazón</strong> de nuestras raíces. No solo construimos páginas web; tejemos relaciones de confianza y creamos plataformas digitales que son tan sólidas, bellas y resilientes como las montañas que nos vieron nacer.
+            </p>
+          </article>
+
+          <section className="founder-section">
+            <div className="founder-image-wrapper">
+              <Image 
+                src="https://i.ibb.co/WZWXG0Q/profile-pic.png" 
+                alt="Foto de Jose Ortega, fundador de Cyber Código"
+                width={200}
+                height={200}
+              />
+            </div>
+            <div className="founder-bio">
+              <h2 className="name">José Ortega</h2>
+              <p className="role">Fundador y Desarrollador Principal</p>
+              <p className="bio-text">
+                Desde niño, mi curiosidad me llevó a desarmar aparatos para ver cómo funcionaban. Esa misma curiosidad me llevó al mundo del código, un lugar donde puedes construir casi cualquier cosa con lógica e imaginación. Cyber Código es mi forma de unir mis dos pasiones: la tecnología y mi tierra. Mi objetivo es darle a cada emprendedor de la región las mismas herramientas digitales que tiene una gran empresa, pero con un trato cercano y honesto.
+              </p>
+              <div className="founder-socials">
+                <a href="https://github.com/joseorteha" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Jose Ortega"><FaGithub /></a>
+                <a href="https://www.linkedin.com/in/jose-orteg4/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Jose Ortega"><FaLinkedin /></a>
+                <a href="https://www.facebook.com/joseortega.exe1" target="_blank" rel="noopener noreferrer" aria-label="Facebook de Jose Ortega"><FaFacebook /></a>
+                <a href="https://www.instagram.com/mr.orteg4" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Jose Ortega"><FaInstagram /></a>
+                <a href="https://www.tiktok.com/@cyber_codigo" target="_blank" rel="noopener noreferrer" aria-label="TikTok de Cyber Código"><FaTiktok /></a>
+                <a href="https://jose-ortega-dev.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Portafolio de Jose Ortega"><FaGlobe /></a>
+              </div>
+            </div>
+          </section>
+
         </div>
-
-        <h1>Forjado en Zongolica, para el Mundo</h1>
-        
-        <h2>Nuestra Raíz, Nuestra Misión</h2>
-        <p>
-          Cyber Código es más que una agencia de desarrollo web; es un sueño nacido en el corazón de las montañas de Zongolica, Veracruz. Nace de la convicción de que el talento y la innovación no tienen fronteras y de que la tecnología puede ser el motor que impulse a nuestra comunidad hacia nuevos horizontes.
-        </p>
-        <p>
-          Nuestra misión es profundamente personal: cerrar la brecha digital para los comerciantes, artesanos y emprendedores de nuestra región. Queremos que la increíble calidad de lo que se hace en Zongolica no solo sea reconocida localmente, sino que resuene en todo el mundo a través de una presencia digital impecable.
-        </p>
-
-        <h2>Detrás del Código: Una Historia Personal</h2>
-        <p>
-          Soy José Ortega. Crecí aquí, entre el aroma a café y la tenacidad de nuestra gente. Vi a mis vecinos, amigos y familiares construir negocios con esfuerzo y pasión, pero también vi cómo luchaban por competir en un mundo cada vez más digital.
-        </p>
-        <p>
-          La programación se convirtió en mi herramienta para cambiar esa realidad. Cada línea de código que escribo está impregnada de un propósito: crear plataformas web que no sean un gasto, sino la mejor inversión para un negocio local. No vendo páginas web; construyo puentes digitales entre tu trabajo y tus futuros clientes. Entiendo tus desafíos porque los he vivido de cerca. Hablo tu idioma, no una jerga técnica incomprensible.
-        </p>
-
-        <h2>¿Por Qué "Cyber Código"?</h2>
-        <p>
-          El nombre representa esa dualidad que nos define. **"Cyber"** es la visión global, la tecnología de punta, la ventana al mundo. **"Código"** es la artesanía, el trabajo meticuloso, la lógica y la pasión que ponemos en cada detalle, como un artesano que conoce su materia a la perfección.
-        </p>
-        <p>
-          Somos la prueba de que desde Zongolica se puede crear tecnología de clase mundial.
-        </p>
-        
-        <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-          <Link href="/#contacto" className="cta-button">
-            ¿Construimos algo juntos?
-          </Link>
-        </div>
-      </div>
-    </div>
+      </main>
+    </>
   );
 };
 
-export default SobreNosotrosPage; 
+export default NosotrosPage;

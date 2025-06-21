@@ -13,12 +13,13 @@
 .legal-container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3rem;
   padding-top: 100px;
   background: var(--card-light);
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   border: 1px solid var(--border-light);
+  transition: background 0.3s, border-color 0.3s;
 }
 
 .dark .legal-container {
@@ -28,20 +29,21 @@
 }
 
 .legal-title {
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: 3rem;
+  font-weight: 900;
   color: var(--text-dark);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
   text-align: center;
   line-height: 1.2;
+  letter-spacing: -1px;
 }
 
 .legal-subtitle {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.75rem;
+  font-weight: 800;
   color: var(--primary-color);
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--primary-color-light);
 }
@@ -49,15 +51,20 @@
 .legal-content p,
 .legal-content li {
   font-size: 1.1rem;
-  line-height: 1.8;
+  line-height: 1.9;
   color: var(--text-gray-dark);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 .legal-content ul {
-  list-style-type: disc;
+  list-style-type: '→ ';
   padding-left: 1.5rem;
   margin-top: 1rem;
+}
+
+.legal-content strong {
+  color: var(--text-dark);
+  font-weight: 700;
 }
 
 .legal-content a {
@@ -75,12 +82,17 @@
 .last-updated {
   margin-top: 3rem;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
+  font-style: italic;
   color: var(--text-gray-light);
 }
 
 
 /* Dark mode styles */
+
+.dark .legal-content strong {
+  color: var(--text-light);
+}
 
 .dark .legal-title {
   color: var(--text-light);

@@ -1,44 +1,76 @@
-import '../../scss/Legal.scss';
+import Head from 'next/head';
+import { Metadata } from 'next';
 
-export default function AvisoPrivacidad() {
+export const metadata: Metadata = {
+  title: 'Aviso de Privacidad | Cyber Código',
+  description: 'Consulta nuestro aviso de privacidad. En Cyber Código, la confianza y transparencia en el manejo de tus datos es nuestra prioridad.',
+};
+
+const AvisoPrivacidadPage = () => {
   return (
-    <section className="legal-section">
-      <div className="legal-container">
-        <h1 className="legal-title">Aviso de Privacidad</h1>
-        <div className="legal-content">
-          <p>En **Cyber Código** (nosotros, nuestro), con domicilio en Zongolica, Veracruz, estamos comprometidos con la protección de su privacidad y el tratamiento legítimo de sus datos personales. Este Aviso de Privacidad detalla cómo recopilamos, utilizamos y protegemos la información que nos proporciona a través de nuestro sitio web y servicios de desarrollo.</p>
+    <>
+      <Head>
+        <title>{metadata.title as string}</title>
+        <meta name="description" content={metadata.description as string} />
+      </Head>
+      <main className="legal-section">
+        <div className="legal-container">
+          <h1 className="legal-title">Aviso de Privacidad</h1>
+          <p className="last-updated">Última actualización: 22 de Junio de 2024</p>
+          
+          <div className="legal-content">
+            <p>
+              En <strong>Cyber Código</strong>, tu confianza es lo más importante para nosotros. Como si estuviéramos compartiendo un café aquí en las montañas de Zongolica, queremos ser claros y directos contigo. Este documento explica qué datos tuyos podríamos necesitar, por qué los usamos y, sobre todo, cómo los cuidamos con la misma dedicación con la que un artesano cuida su obra.
+            </p>
 
-          <h2 className="legal-subtitle">1. Datos Personales que Recopilamos</h2>
-          <p>Podemos recopilar la siguiente información:</p>
-          <ul>
-            <li>**Datos de Identificación y Contacto:** Nombre completo, dirección de correo electrónico, número de teléfono y/o WhatsApp.</li>
-            <li>**Datos del Proyecto:** Información sobre su negocio, objetivos, requisitos y cualquier material (textos, imágenes, etc.) que nos proporcione para la realización de su proyecto web.</li>
-            <li>**Datos de Navegación:** Información no identificable personalmente como tipo de navegador, dispositivo y páginas visitadas en nuestro sitio, con el fin de mejorar nuestra plataforma.</li>
-          </ul>
+            <h2 className="legal-subtitle">1. ¿Quiénes somos?</h2>
+            <p>
+              <strong>Cyber Código</strong> (en adelante, "nosotros"), con domicilio virtual y corazón en Zongolica, Veracruz, es el responsable del uso y protección de tus datos personales.
+            </p>
 
-          <h2 className="legal-subtitle">2. Finalidad del Tratamiento de Datos</h2>
-          <p>Sus datos personales serán utilizados para los siguientes fines:</p>
-          <ul>
-            <li>Proveer los servicios de diseño y desarrollo web solicitados.</li>
-            <li>Elaborar y enviar cotizaciones, propuestas y contratos.</li>
-            <li>Mantener una comunicación efectiva durante el ciclo de vida del proyecto.</li>
-            <li>Realizar procesos de facturación y cobro.</li>
-            <li>Brindar soporte técnico y atención post-lanzamiento.</li>
-            <li>Notificarle sobre actualizaciones de nuestros servicios o cambios en nuestras políticas.</li>
-          </ul>
+            <h2 className="legal-subtitle">2. ¿Qué datos personales utilizamos?</h2>
+            <p>
+              Para poder ofrecerte nuestros servicios, podríamos recopilar los siguientes datos:
+            </p>
+            <ul>
+              <li><strong>Datos de Contacto:</strong> Nombre, correo electrónico, número de teléfono.</li>
+              <li><strong>Datos de Proyecto:</strong> Información que nos proporciones sobre tu negocio o proyecto para poder cotizar y desarrollar tu sitio web.</li>
+              <li><strong>Datos de Navegación:</strong> Información técnica como tu dirección IP o tipo de navegador, con fines de análisis y mejora de nuestro sitio (de forma anónima).</li>
+            </ul>
 
-          <h2 className="legal-subtitle">3. Seguridad de sus Datos</h2>
-          <p>Implementamos medidas de seguridad técnicas y organizativas para proteger sus datos personales contra el acceso no autorizado, alteración, divulgación o destrucción. Su información no será vendida, alquilada ni compartida con terceros para fines de marketing sin su consentimiento explícito.</p>
+            <h2 className="legal-subtitle">3. ¿Para qué usamos tus datos?</h2>
+            <p>
+              Tu información nos ayuda a:
+            </p>
+            <ul>
+              <li>Establecer una comunicación clara y directa contigo.</li>
+              <li>Entender tus necesidades para crear una cotización a tu medida.</li>
+              <li>Desarrollar, entregar y dar seguimiento al proyecto que nos confiaste.</li>
+              <li>Mejorar la experiencia de nuestro sitio web.</li>
+              <li>Enviarte información relevante sobre nuestros servicios (solo si tú nos das tu consentimiento explícito).</li>
+            </ul>
+            <p>
+              <strong>Tu tranquilidad es primero:</strong> Nunca venderemos, rentaremos o compartiremos tus datos personales con terceros para fines que no hayas autorizado.
+            </p>
 
-          <h2 className="legal-subtitle">4. Derechos ARCO</h2>
-          <p>Usted tiene derecho a **Acceder, Rectificar, Cancelar** sus datos personales, así como a **Oponerse** al tratamiento de los mismos (derechos ARCO). Para ejercer estos derechos, puede enviar una solicitud detallada a nuestro correo de contacto.</p>
-          <p>Puede solicitar la corrección o eliminación de sus datos en cualquier momento enviando un correo a <a href="mailto:codemasterdev@outlook.com">codemasterdev@outlook.com</a>.</p>
+            <h2 className="legal-subtitle">4. Tus Derechos ARCO</h2>
+            <p>
+              La ley te da el derecho de <strong>Acceder, Rectificar, Cancelar</strong> tu información, así como de <strong>Oponerte</strong> a su uso. Para ejercer tus derechos ARCO, solo tienes que enviarnos un correo a <a href="mailto:contacto@cybercodigo.dev">contacto@cybercodigo.dev</a>. Tu petición es una orden para nosotros.
+            </p>
 
-          <h2 className="legal-subtitle">5. Cambios al Aviso de Privacidad</h2>
-          <p>Nos reservamos el derecho de efectuar en cualquier momento modificaciones o actualizaciones al presente aviso de privacidad. Cualquier cambio será notificado a través de nuestro sitio web.</p>
+            <h2 className="legal-subtitle">5. Cambios a este aviso</h2>
+            <p>
+              Si llegamos a hacer cambios importantes a este aviso, te lo haremos saber a través de nuestro sitio web o por correo. Nuestra promesa de transparencia sigue intacta.
+            </p>
+
+            <p>
+              Gracias por tu confianza. Si tienes cualquier duda, por favor, escríbenos. Aquí estamos para ayudarte.
+            </p>
+          </div>
         </div>
-        <p className="last-updated">Última actualización: 24 de Julio de 2024</p>
-      </div>
-    </section>
+      </main>
+    </>
   );
-} 
+};
+
+export default AvisoPrivacidadPage; 

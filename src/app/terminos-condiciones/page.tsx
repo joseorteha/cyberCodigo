@@ -1,45 +1,67 @@
-import '../../scss/Legal.scss';
+import Head from 'next/head';
+import { Metadata } from 'next';
 
-export default function TerminosCondiciones() {
+export const metadata: Metadata = {
+  title: 'Términos y Condiciones | Cyber Código',
+  description: 'Conoce los términos y condiciones de nuestros servicios. Reglas claras para una colaboración exitosa y de confianza.',
+};
+
+const TerminosCondicionesPage = () => {
   return (
-    <section className="legal-section">
-      <div className="legal-container">
-        <h1 className="legal-title">Términos y Condiciones</h1>
-        <div className="legal-content">
-          <p>Bienvenido a **Cyber Código**. Al contratar cualquiera de nuestros servicios, usted (el Cliente) acepta y se compromete a cumplir los siguientes términos y condiciones que rigen nuestra relación profesional.</p>
+    <>
+      <Head>
+        <title>{metadata.title as string}</title>
+        <meta name="description" content={metadata.description as string} />
+      </Head>
+      <main className="legal-section">
+        <div className="legal-container">
+          <h1 className="legal-title">Términos y Condiciones</h1>
+          <p className="last-updated">Última actualización: 22 de Junio de 2024</p>
 
-          <h2 className="legal-subtitle">1. Servicios Ofrecidos</h2>
-          <p>Nos especializamos en el diseño, desarrollo y mantenimiento de sitios web, tiendas en línea (e-commerce) y aplicaciones web personalizadas. El alcance, características y entregables de cada proyecto se detallarán en una cotización o propuesta formal que deberá ser aprobada por el Cliente antes de iniciar el trabajo.</p>
+          <div className="legal-content">
+            <p>
+              ¡Qué bueno tenerte por aquí! En <strong>Cyber Código</strong>, creemos que las mejores colaboraciones nacen de la confianza y las reglas claras. Piensa en este documento no como una letra pequeña, sino como un apretón de manos: un acuerdo mutuo que pone las bases para construir algo increíble juntos.
+            </p>
 
-          <h2 className="legal-subtitle">2. Proceso de Trabajo y Responsabilidades</h2>
-          <ul>
-            <li>**Responsabilidad del Cliente:** El Cliente se compromete a proporcionar de manera oportuna todo el material necesario para el proyecto (textos, logos, imágenes, accesos, etc.) y a participar activamente en las fases de revisión y retroalimentación.</li>
-            <li>**Tiempos de Entrega:** Los plazos de entrega son estimados y pueden variar según la complejidad del proyecto y la puntualidad en la retroalimentación y entrega de material por parte del Cliente.</li>
-            <li>**Revisiones y Cambios:** El proyecto incluye un número de rondas de revisión especificadas en la cotización. Cambios adicionales o modificaciones que excedan el alcance original podrán generar costos extra.</li>
-          </ul>
+            <h2 className="legal-subtitle">1. Nuestros Servicios</h2>
+            <p>
+              Nos dedicamos con pasión al <strong>diseño y desarrollo de sitios web a medida</strong>, registro de dominios, configuración de hosting y servicios de mantenimiento. Cada línea de código y cada pixel están puestos con la intención de que tu proyecto brille en el mundo digital.
+            </p>
 
-          <h2 className="legal-subtitle">3. Pagos y Facturación</h2>
-          <ul>
-            <li>Los planes de pago se definirán en la cotización, requiriendo generalmente un anticipo para iniciar el proyecto (ej. 50%) y el pago restante contra entrega o en hitos definidos.</li>
-            <li>Los pagos deben realizarse en los plazos acordados para evitar retrasos en el proyecto. Todos los precios son en MXN y no incluyen IVA, a menos que se especifique lo contrario.</li>
-          </ul>
+            <h2 className="legal-subtitle">2. El Proceso de Colaboración</h2>
+            <p>
+              Nuestro trabajo se guía por un proceso claro:
+            </p>
+            <ul>
+              <li><strong>Cotización y Acuerdo:</strong> Todo empieza con una plática para entender tu visión. Te presentaremos una cotización detallada. Para arrancar el motor, solemos requerir un anticipo (generalmente del 50%).</li>
+              <li><strong>Tu Colaboración es Clave:</strong> Para que tu web refleje tu esencia, necesitaremos que nos proporciones a tiempo los textos, imágenes y accesos necesarios. La comunicación fluida es el aceite que mueve este engranaje.</li>
+              <li><strong>Entregas y Revisiones:</strong> Te presentaremos avances para que los revises. Tendremos rondas de ajustes definidas en nuestra cotización para asegurar que el resultado final te encante.</li>
+              <li><strong>Entrega Final:</strong> Una vez aprobado el trabajo y cubierto el pago final, te entregaremos tu sitio web completamente funcional, junto con los accesos correspondientes. ¡Tu proyecto estará listo para conquistar el internet!</li>
+            </ul>
 
-          <h2 className="legal-subtitle">4. Dominio y Hospedaje (Hosting)</h2>
-          <p>Algunos de nuestros paquetes incluyen el registro de un dominio y el servicio de hospedaje web por un (1) año. La titularidad del dominio será del Cliente. La renovación anual de estos servicios a partir del segundo año tendrá un costo adicional y es responsabilidad del Cliente.</p>
+            <h2 className="legal-subtitle">3. Sobre Pagos y Propiedad</h2>
+            <p>
+              <strong>Los pagos se estructuran</strong> según lo acordado en la cotización. Una vez liquidado el proyecto en su totalidad, <strong>tú eres el único dueño de tu sitio web</strong>. El código, los diseños, todo es tuyo. Nosotros solo nos quedamos con la satisfacción de haber sido parte de tu historia.
+            </p>
 
-          <h2 className="legal-subtitle">5. Propiedad Intelectual</h2>
-          <p>Una vez liquidado el proyecto en su totalidad, el Cliente será el propietario de los derechos de autor del diseño final y el código del sitio web. Nos reservamos el derecho de incluir el proyecto en nuestro portafolio y materiales de marketing.</p>
-          
-          <h2 className="legal-subtitle">6. Limitación de Responsabilidad</h2>
-          <p>Cyber Código no se hace responsable por fallas en servicios de terceros (proveedores de hosting, pasarelas de pago, etc.), pérdidas de datos por mal uso por parte del Cliente o daños causados por ataques de fuerza mayor. Ofrecemos servicios de mantenimiento y seguridad para minimizar estos riesgos.</p>
+            <h2 className="legal-subtitle">4. Cancelaciones</h2>
+            <p>
+              Entendemos que los planes pueden cambiar. Si necesitas cancelar el proyecto, se analizará el trabajo realizado hasta el momento para definir los pasos a seguir. El anticipo inicial generalmente cubre la primera fase de investigación, estrategia y diseño, por lo que no es reembolsable. Buscaremos siempre el acuerdo más justo para ambos.
+            </p>
+            
+            <h2 className="legal-subtitle">5. Confidencialidad</h2>
+            <p>
+             Toda la información de tu proyecto es tratada con la máxima discreción. Somos una bóveda de confianza.
+            </p>
 
-          <h2 className="legal-subtitle">7. Cancelación y Reembolsos</h2>
-          <p>Si el Cliente decide cancelar el proyecto una vez iniciado, no se realizarán reembolsos por el trabajo ya efectuado. El material desarrollado hasta la fecha de cancelación podrá ser entregado al Cliente si corresponde.</p>
-          
-          <p>Para cualquier duda o aclaración, contáctanos en <a href="mailto:codemasterdev@outlook.com">codemasterdev@outlook.com</a>.</p>
+            <p>
+              Al contratar nuestros servicios, aceptas estos términos. Si algo no está claro o tienes alguna pregunta, por favor, dila con toda confianza. Estamos aquí para construir juntos.
+            </p>
+          </div>
         </div>
-        <p className="last-updated">Última actualización: 24 de Julio de 2024</p>
-      </div>
-    </section>
+      </main>
+    </>
   );
-} 
+};
+
+export default TerminosCondicionesPage; 
