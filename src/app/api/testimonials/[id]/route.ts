@@ -1,6 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
 
 // Crear el cliente de Supabase con la clave de servicio para tener permisos de administrador
 const supabaseAdmin = createClient(
@@ -12,10 +11,10 @@ const supabaseAdmin = createClient(
  * Maneja la actualización (aprobación) de un testimonio.
  */
 export async function PATCH(
-  request: NextRequest,
-  { params }: { params: { id: string } }
+  request: Request,
+  context: { params: { id: string } }
 ) {
-  const { id } = params;
+  const { id } = context.params;
 
   try {
     const { error } = await supabaseAdmin
@@ -36,10 +35,10 @@ export async function PATCH(
  * Maneja la eliminación de un testimonio y su imagen asociada.
  */
 export async function DELETE(
-  request: NextRequest,
-  { params }: { params: { id: string } }
+  request: Request,
+  context: { params: { id: string } }
 ) {
-  const { id } = params;
+  const { id } = context.params;
 
   try {
     // Primero, obtenemos la URL de la imagen del testimonio que vamos a borrar.
