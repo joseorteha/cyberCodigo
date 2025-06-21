@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import './../scss/Legal.scss';
+import '../../scss/Legal.scss';
 
 const GraciasPage = () => {
   return (
