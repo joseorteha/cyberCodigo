@@ -10,7 +10,7 @@
 [![Lenguaje: TypeScript](https://img.shields.io/badge/Lenguaje-TypeScript-blue?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Estilos: SCSS](https://img.shields.io/badge/Estilos-SCSS-hotpink?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
 [![Backend: Supabase](https://img.shields.io/badge/Backend-Supabase-brightgreen?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.io/)
-[![Deployment: Netlify](https://img.shields.io/badge/Deployment-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://www.netlify.com/)
+[![Deployment: Vercel](https://img.shields.io/badge/Deployment-Vercel-black?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
 </div>
 
@@ -18,7 +18,7 @@
 
 Este repositorio contiene el código fuente de la landing page de **Cyber Código**. Construido desde cero con un enfoque en rendimiento, estética y funcionalidad, este proyecto sirve como la principal carta de presentación digital de la agencia.
 
-**Visita la demo en vivo:** [**cybercodigo.com**](https://cybercodigo.netlify.app/) (¡Tu URL de producción aquí!)
+**Visita el sitio en vivo:** [**cybercodigo-seven.vercel.app**](https://cybercodigo-seven.vercel.app/)
 
 ## ✨ Características Principales
 
@@ -47,7 +47,7 @@ Este repositorio contiene el código fuente de la landing page de **Cyber Códig
 | **Supabase** | Backend como servicio (BaaS) para la base de datos (PostgreSQL), autenticación y APIs. |
 | **Framer Motion** | Biblioteca de animaciones para una experiencia de usuario fluida y declarativa. |
 | **Iron Session** | Gestión de sesiones seguras y encriptadas para el panel de administración. |
-| **Netlify** | Plataforma de despliegue para aplicaciones web modernas. |
+| **Vercel** | Plataforma de despliegue optimizada para Next.js. |
 
 ## 🚀 Cómo Empezar
 

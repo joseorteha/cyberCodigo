@@ -15,19 +15,19 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Cyber Código - Desarrollo Web Profesional",
   description: "Transformamos ideas en soluciones digitales. Diseño y desarrollo de páginas web, e-commerce y aplicaciones a la medida para potenciar tu negocio.",
-  metadataBase: new URL('https://cybercodigo.dev'),
+  metadataBase: new URL('https://cybercodigo-seven.vercel.app'),
   openGraph: {
     title: 'Cyber Código - Desarrollo Web Profesional',
     description: 'Soluciones digitales a la medida para tu negocio.',
-    images: '/LOGO.jpg', 
+    images: '/image.png', 
   },
   icons: {
     icon: [
-      { url: '/LOGO.jpg', type: 'image/jpeg' },
+      { url: '/image.png', type: 'image/png' },
     ],
-    shortcut: ['/LOGO.jpg'],
+    shortcut: ['/image.png'],
     apple: [
-      { url: '/LOGO.jpg', type: 'image/jpeg' },
+      { url: '/image.png', type: 'image/png' },
     ],
   }
 };
