@@ -48,7 +48,8 @@ const Header = () => {
               alt="Cyber Código Logo" 
               width={40} 
               height={40} 
-              className="brand-img" 
+              className="brand-img"
+              priority
             />
             <span className={`brand-title${scrolled ? ' scrolled' : ''}`}>
               Cyber Código

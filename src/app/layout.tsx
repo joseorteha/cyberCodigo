@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import dynamic from 'next/dynamic';
 import "./../scss/main.scss";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import AnimatedBackground from '@/components/AnimatedBackground';
+
+// Carga dinámica del componente que usa canvas y window
+const AnimatedBackground = dynamic(() => import('@/components/AnimatedBackground'), {
+  ssr: false,
+});
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -19,16 +24,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cyber Código - Desarrollo Web Profesional',
     description: 'Soluciones digitales a la medida para tu negocio.',
-    images: '/image.png', 
+    images: '/LOGO.jpg', 
   },
   icons: {
-    icon: [
-      { url: '/image.png', type: 'image/png' },
-    ],
-    shortcut: ['/image.png'],
-    apple: [
-      { url: '/image.png', type: 'image/png' },
-    ],
+    icon: '/favico.ico',
+    shortcut: '/favico.ico',
+    apple: '/favico.ico',
   }
 };
 

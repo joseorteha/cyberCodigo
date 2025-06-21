@@ -6,7 +6,7 @@ import { FaGlobe } from 'react-icons/fa';
 
 export const metadata: Metadata = {
   title: 'Nosotros | Cyber Código',
-  description: 'Nacimos en las montañas de Zongolica, Veracruz. Somos un equipo apasionado por la tecnología y con la misión de construir puentes digitales para negocios locales y globales.',
+  description: 'Desde Zongolica para el mundo. Creamos páginas web accesibles y profesionales para negocios reales que quieren crecer en internet.',
 };
 
 const NosotrosPage = () => {
@@ -20,24 +20,24 @@ const NosotrosPage = () => {
         <div className="about-container">
           <header className="about-header">
             <p className="subtitle">Nuestra Historia</p>
-            <h1 className="title">Conectando Raíces con el Futuro Digital</h1>
+            <h1 className="title">Conectando negocios reales con el mundo digital</h1>
           </header>
 
           <article className="about-content">
             <p>
-              <strong>Cyber Código</strong> no nació en un garaje de Silicon Valley, sino con el aroma a café recién molido que perfuma las altas montañas de <strong>Zongolica, Veracruz</strong>. Somos un proyecto forjado con el carácter de nuestra gente: gente trabajadora que nos enseñó el valor de la palabra, la importancia de un apretón de manos y el orgullo por el trabajo bien hecho.
+              En <strong>Cyber Código</strong> no vendemos humo. Nacimos en <strong>Zongolica, Veracruz</strong>, con una misión clara: <strong>acercar la tecnología a quienes realmente la necesitan.</strong> Sabemos que aquí, en nuestra tierra, hay talento, esfuerzo y grandes ideas. Pero muchas veces eso no es suficiente si no tienes presencia en internet.
             </p>
             <p>
-              El "chispazo" ocurrió una tarde, viendo a una artesana local tejer un telar de cintura con una destreza increíble. Su arte era de clase mundial, pero su mercado era local. Nos preguntamos: ¿Y si pudiéramos darle a esa tradición una ventana al mundo? ¿Y si el código fuera el hilo que conectara su telar con clientes en Tokio, París o Nueva York?
+              ¿Cuántas veces has escuchado: “Si tuviera una página web, vendería más” o “No sé cómo darme a conocer”? Ahí es donde entramos nosotros.
             </p>
             <p>
-              Crecimos viendo el inmenso talento de los artesanos, los productores y los soñadores de nuestra tierra. Y vimos también una brecha invisible: una desconexión con el universo digital que limitaba su potencial para brillar. Así nació nuestra misión: <strong>ser el puente entre la tradición y la tecnología</strong>. Usamos el código no como un fin, sino como un lenguaje para contar historias, para abrir mercados y para demostrar que las grandes ideas florecen en cualquier rincón del mundo, especialmente aquí, donde el aire es más puro.
+              No somos una gran empresa, somos como tú: personas que trabajan todos los días, que conocen lo que es empezar desde abajo, que quieren ver a los negocios locales <strong>crecer, destacar y ser reconocidos.</strong> Lo nuestro no es solo hacer páginas, es abrir puertas.
             </p>
             <p>
-              Nuestro primer proyecto fue para una pequeña cafetería familiar. Su café era excepcional, pero su presencia en línea era nula. Construimos una web sencilla pero elegante, con una galería de fotos que casi permitía oler los granos tostados y un sistema para pedidos locales. En pocas semanas, sus ventas a domicilio se triplicaron. Ese día entendimos el poder real de nuestro trabajo: no se trata de líneas de código, sino de transformar vidas y negocios.
+              Creemos que cualquier negocio merece tener <strong>una página web chida, clara, que funcione y que lo represente de verdad.</strong> No importa si vendes tacos, tienes una ferretería, un estudio, o apenas estás empezando tu marca → aquí estamos para ayudarte a llevar tu idea al siguiente nivel.
             </p>
             <p>
-              Cada proyecto que emprendemos lleva impregnada esa esencia. Combinamos la <strong>precisión técnica del desarrollo de software</strong> con la <strong>creatividad, la calidez y el corazón</strong> de nuestras raíces. No solo construimos páginas web; tejemos relaciones de confianza y creamos plataformas digitales que son tan sólidas, bellas y resilientes como las montañas que nos vieron nacer.
+              <strong>Cyber Código es tecnología hecha en Zongolica, para que lo local se vuelva global.</strong>
             </p>
           </article>
 
@@ -52,21 +52,17 @@ const NosotrosPage = () => {
             </div>
             <div className="founder-bio">
               <h2 className="name">José Ortega</h2>
-              <p className="role">Fundador, Arquitecto Digital y Contador de Historias</p>
+              <p className="role">Fundador de Cyber Código | Desarrollador Web & Digital Maker</p>
               <div className="bio-text">
                 <p>
-                  Desde niño, mi curiosidad me llevó a desarmar los juguetes y la radio de mi abuela para ver cómo funcionaban por dentro (y no siempre lograba rearmarlos). Esa misma curiosidad insaciable me llevó al mundo del código, un universo donde puedes construir cualquier cosa con lógica, creatividad y cafeína. Para mí, programar es el superpoder del siglo XXI.
+                  Desde niño siempre fui curioso. No me bastaba con usar las cosas, quería entender <strong>cómo funcionaban por dentro</strong>. Así terminé metido en el mundo del código, donde descubrí algo increíble: <strong>con programación puedes construir lo que te imagines.</strong> Para mí, programar es el lenguaje que conecta ideas con resultados.
                 </p>
                 <p>
-                  Cyber Código es la materialización de un sueño: unir mis dos grandes pasiones, la tecnología de vanguardia y el amor por mi tierra. Mi objetivo es democratizar la tecnología, darle a cada emprendedor de la región y más allá, las mismas herramientas digitales que tiene una corporación multinacional, pero con un trato cercano, honesto y un café de por medio.
+                  Hoy, con <strong>Cyber Código</strong>, estoy cumpliendo un sueño personal: <strong>ayudar a que los negocios locales tengan acceso a las herramientas digitales que usan las grandes marcas</strong>, pero sin vueltas raras ni cobros escondidos.
                 </p>
-                <h3 className="philosophy-title">Mi Filosofía de Trabajo</h3>
-                <ul>
-                  <li><strong>Artesanía Digital:</strong> Cada línea de código es como una pincelada. Busco no solo la funcionalidad, sino también la elegancia y la limpieza en todo lo que construyo.</li>
-                  <li><strong>Empatía Radical:</strong> Antes de escribir una sola línea de código, me esfuerzo por entender a fondo tu negocio, tus metas y tus miedos. Tu éxito es mi éxito.</li>
-                  <li><strong>Transparencia Total:</strong> Olvídate de los tecnicismos confusos. Te explicaré todo el proceso en un lenguaje claro y sencillo. Siempre sabrás en qué se invierte tu tiempo y tu dinero.</li>
-                  <li><strong>Innovación Constante:</strong> El mundo digital nunca se detiene, y yo tampoco. Estoy en un aprendizaje perpetuo para traerte siempre las soluciones más modernas y efectivas.</li>
-                </ul>
+                <p>
+                  Aquí se habla claro: tú me cuentas tu idea → yo la convierto en una página web lista para funcionar → tú vendes más → ganamos todos. Me gusta el café, el diseño limpio y ver a la banda local progresar.
+                </p>
               </div>
               <div className="founder-socials">
                 <a href="https://github.com/joseorteha" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Jose Ortega"><FaGithub /></a>
