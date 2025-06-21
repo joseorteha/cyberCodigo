@@ -1,13 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
 
-// Define a non-conflicting type for the context
-type ApiRouteContext = {
-  params: {
-    id: string;
-  };
-};
-
 // Crear el cliente de Supabase con la clave de servicio para tener permisos de administrador
 const supabaseAdmin = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -19,7 +12,7 @@ const supabaseAdmin = createClient(
  */
 export async function PATCH(
   request: Request,
-  { params }: ApiRouteContext
+  { params }: { params: { id: string } }
 ) {
   const { id } = params;
 
@@ -43,7 +36,7 @@ export async function PATCH(
  */
 export async function DELETE(
   request: Request,
-  { params }: ApiRouteContext
+  { params }: { params: { id: string } }
 ) {
   const { id } = params;
 
