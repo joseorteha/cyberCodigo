@@ -35,62 +35,39 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
-        <div className="footer-grid">
-          {/* Column 1: Logo and Brand */}
-          <div className="footer-brand">
-            <Link href="/" className="footer-brand-link">
-              <Image src="/LOGO.jpg" alt="Cyber Código Logo" width={40} height={40} className="footer-logo" />
-              <span className="footer-title">Cyber Código</span>
+        <div className="footer-columns">
+          <div className="footer-column logo-column">
+            <Link href="/" className="footer-logo">
+              <Image src="/LOGO.jpg" alt="Cyber Código Logo" width={50} height={50} />
+              <span>Cyber Código</span>
             </Link>
-            <p className="footer-desc">
-              Impulsamos a negocios de Zongolica a triunfar en el mundo digital con soluciones web estratégicas, creativas y de alto rendimiento.
-            </p>
+            <p className="footer-tagline">Creamos soluciones digitales a la medida de tus sueños.</p>
           </div>
-
-          {/* Column 2: Quick Form */}
-          <div className="footer-form">
-            <h3 className="footer-heading">¿Tienes un proyecto en mente?</h3>
-            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name" value="contact" />
-              <div style={{ display: "none" }}>
-                  <label>No llenes esto si eres humano: <input name="bot-field" /></label>
-              </div>
-              <input type="email" name="email" className="footer-input" placeholder="Tu correo electrónico" required />
-              <textarea name="message" className="footer-textarea" placeholder="Cuéntanos sobre tu idea..." required></textarea>
-              <button type="submit" className="footer-button">Enviar Mensaje</button>
-            </form>
+          <div className="footer-column">
+            <h4>Navegación</h4>
+            <ul className="footer-links">
+              <li><Link href="/nosotros">Nosotros</Link></li>
+              <li><Link href="/#portfolio">Portafolio</Link></li>
+              <li><Link href="/blog">Blog</Link></li>
+              <li><Link href="/#contact">Contacto</Link></li>
+            </ul>
           </div>
-
-          {/* Column 3: Contact & Social */}
-          <div className="footer-contact-social">
-            <div className="footer-contact">
-              <h3 className="footer-heading">Contacto</h3>
-              <ul className="footer-list">
-                <li><a href="mailto:codemasterdev@outlook.com" className="footer-link">codemasterdev@outlook.com</a></li>
-                <li><Link href={whatsappLink} target="_blank" className="footer-link">WhatsApp: +52 272-296-8204</Link></li>
-                <li><Link href={portfolioLink} target="_blank" className="footer-link">Portafolio</Link></li>
-              </ul>
-            </div>
-            <div className="footer-social">
-              <h3 className="footer-heading">Síguenos</h3>
-              <div className="footer-social-icons">
-                <Link href={facebookLink} target="_blank" className="footer-link"><FacebookIcon /></Link>
-                <Link href={instagramLink} target="_blank" className="footer-link"><InstagramIcon /></Link>
-              </div>
+          <div className="footer-column">
+            <h4>Legal</h4>
+            <ul className="footer-links">
+              <li><Link href="/aviso-privacidad">Aviso de Privacidad</Link></li>
+              <li><Link href="/terminos-condiciones">Términos y Condiciones</Link></li>
+            </ul>
+          </div>
+          <div className="footer-column">
+            <h4>Síguenos</h4>
+            <div className="social-icons">
+               {/* Puedes agregar tus redes aquí */}
             </div>
           </div>
         </div>
-
-        <div className="footer-legal">
-          <ul className="footer-legal-list">
-            <li><Link href="/nosotros" className="footer-legal-link">Sobre Nosotros</Link></li>
-            <li><Link href="/aviso-privacidad" className="footer-legal-link">Aviso de Privacidad</Link></li>
-            <li><Link href="/terminos-condiciones" className="footer-legal-link">Términos y Condiciones</Link></li>
-          </ul>
-        </div>
-
         <div className="footer-bottom">
-          <p>&copy; {year} Cyber Código. Todos los derechos reservados. Diseñado y desarrollado con ❤️ en Zongolica, Veracruz.</p>
+          <p>&copy; {new Date().getFullYear()} Cyber Código. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
