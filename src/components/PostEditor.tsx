@@ -66,7 +66,7 @@ const PostEditor: React.FC<PostEditorProps> = ({ post, onSave, onClose }) => {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <h2>{post?.id ? 'Editar Artículo' : 'Crear Nuevo Artículo'}</h2>
-        <form onSubmit={handleSubmit} className="post-editor-form">
+        <form onSubmit={handleSubmit} className="post-editor-form" data-netlify="false">
           <div className="form-group">
             <label htmlFor="title">Título</label>
             <input id="title" type="text" value={title} onChange={handleTitleChange} required />

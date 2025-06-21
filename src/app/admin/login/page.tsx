@@ -26,8 +26,9 @@ export default function LoginPage() {
     <div className="admin-login-container">
       <div className="login-box">
         <h2>Cyber Código - Admin</h2>
-        <p>Introduce la contraseña para acceder al panel.</p>
-        <form onSubmit={handleSubmit}>
+        <p>Ingresa la contraseña para administrar el contenido.</p>
+        {error && <p className="error-message">{error}</p>}
+        <form onSubmit={handleSubmit} data-netlify="false">
           <div className="form-group">
             <label htmlFor="password">Contraseña</label>
             <input
@@ -38,7 +39,6 @@ export default function LoginPage() {
               className={error ? 'input-error' : ''}
             />
           </div>
-          {error && <p className="error-message">{error}</p>}
           <button type="submit" className="submit-btn" disabled={loading}>
             {loading ? 'Verificando...' : 'Entrar'}
           </button>
