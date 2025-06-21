@@ -21,8 +21,8 @@ const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const whatsappLink = "https://wa.me/522722968204?text=Hola%2C%20estoy%20interesado%20en%20una%20cotización.";
 const portfolioLink = "https://jose-ortega-dev.netlify.app/";
-const facebookLink = "https://www.facebook.com/joseortegadev";
-const instagramLink = "https://www.instagram.com/joseortegadev/";
+const facebookLink = "https://www.facebook.com/CyberCodigo";
+const instagramLink = "https://www.instagram.com/cybercodigo/";
 
 const Footer = () => {
   const [year, setYear] = useState(new Date().getFullYear());

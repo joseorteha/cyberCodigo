@@ -39,40 +39,54 @@ const QuoteCalculator = () => {
       <div className="quote-container">
         <h2 className="quote-title">Calcula tu Cotización</h2>
         <p className="quote-desc">Selecciona el paquete y los extras que necesitas. El precio se actualiza automáticamente.</p>
-        <form className="quote-form" onSubmit={e => e.preventDefault()}>
-          <div className="quote-packages">
-            {packages.map((pkg, idx) => (
-              <label key={pkg.name} className={`quote-package${selectedPackage === idx ? ' selected' : ''}`}>
-                <input
-                  type="radio"
-                  name="package"
-                  checked={selectedPackage === idx}
-                  onChange={() => setSelectedPackage(idx)}
-                />
-                <span className="quote-package-name">{pkg.name}</span>
-                <span className="quote-package-price">${pkg.price} MXN</span>
-                <span className="quote-package-desc">{pkg.desc}</span>
-              </label>
-            ))}
+        <div className="quote-form">
+          <div className="form-group">
+            <h3>1. Elige tu Paquete Base</h3>
+            <div className="quote-packages">
+              {packages.map((pkg, idx) => (
+                <div 
+                  key={pkg.name} 
+                  className={`quote-card${selectedPackage === idx ? ' selected' : ''}`}
+                  onClick={() => setSelectedPackage(idx)}
+                >
+                  <input
+                    type="radio"
+                    name="package"
+                    checked={selectedPackage === idx}
+                    readOnly
+                  />
+                  <div className="package-name">{pkg.name}</div>
+                  <div className="package-price">${pkg.price} MXN</div>
+                  <div className="package-desc">{pkg.desc}</div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="quote-extras">
-            <span className="quote-extras-title">Extras:</span>
-            {extras.map((extra, idx) => (
-              <label key={extra.name} className="quote-extra">
-                <input
-                  type="checkbox"
-                  checked={selectedExtras.includes(idx)}
-                  onChange={() => handleExtraChange(idx)}
-                />
-                <span>{extra.name} (+${extra.price} MXN)</span>
-              </label>
-            ))}
+          <div className="form-group">
+            <h3>2. Añade los Extras (Opcional)</h3>
+            <div className="quote-extras">
+              {extras.map((extra, idx) => (
+                <div 
+                  key={extra.name} 
+                  className={`quote-card${selectedExtras.includes(idx) ? ' selected' : ''}`}
+                  onClick={() => handleExtraChange(idx)}
+                >
+                  <input
+                    type="checkbox"
+                    checked={selectedExtras.includes(idx)}
+                    readOnly
+                  />
+                  <div className="extra-name">{extra.name}</div>
+                  <div className="package-price">+${extra.price} MXN</div>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="quote-total">
             <span>Total estimado:</span>
             <span className="quote-total-price">${total} MXN</span>
           </div>
-        </form>
+        </div>
       </div>
     </motion.section>
   );

@@ -27,7 +27,7 @@ class SparkleInstance implements Sparkle {
     this.maxLife = Math.random() * 150 + 50;
     this.life = this.maxLife;
     this.opacity = 0;
-    this.radius = Math.random() * 1.5 + 0.5;
+    this.radius = Math.random() * 1.5 + 1;
   }
 
   update() {
@@ -60,7 +60,7 @@ const AnimatedBackground = () => {
 
     const gridSize = 50;
     let sparkles: Sparkle[] = [];
-    const maxSparkles = 50;
+    const maxSparkles = 150;
 
     const setCanvasDimensions = () => {
       canvas.width = window.innerWidth;

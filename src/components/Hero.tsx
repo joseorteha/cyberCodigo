@@ -4,9 +4,27 @@
 
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
+import { useState, useEffect } from "react";
 import '../scss/Hero.scss';
 
+const titles = [
+  "Tu Negocio Despega",
+  "Tu Marca Crece",
+  "Tus Ventas Aumentan",
+  "Tu Proyecto Triunfa",
+];
+
 const Hero = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prevIndex) => (prevIndex + 1) % titles.length);
+    }, 4000); // 4 segundos por frase
+
+    return () => clearInterval(interval);
+  }, []);
+
   const whatsappLink = "https://wa.me/522722968204?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios.";
 
   const containerVariants: Variants = {
@@ -31,6 +49,9 @@ const Hero = () => {
     },
   };
 
+  const currentTitle = titles[index];
+  let letterCount = 0;
+
   return (
     <section className="hero-section">
       {/* El fondo de puntitos ahora es global */}
@@ -46,7 +67,40 @@ const Hero = () => {
           className="hero-title"
           variants={itemVariants}
         >
-          Tu Negocio Despega en el Mundo Digital 🚀
+          <div className="hero-title-dynamic" key={index}>
+            {currentTitle.split(' ').map((word, wordIndex) => (
+              <span className="word" key={wordIndex}>
+                {word.split('').map((char, charIndex) => {
+                  letterCount++;
+                  return (
+                    <motion.span
+                      key={charIndex}
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: letterCount * 0.08, duration: 0.4 }}
+                    >
+                      {char}
+                    </motion.span>
+                  );
+                })}
+                {wordIndex < currentTitle.split(' ').length - 1 && (
+                  (() => {
+                    letterCount++;
+                    return (
+                      <motion.span
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: letterCount * 0.08, duration: 0.4 }}
+                      >
+                        {'\u00A0'}
+                      </motion.span>
+                    );
+                  })()
+                )}
+              </span>
+            ))}
+          </div>
+          <span className="hero-title-suffix">en el Mundo Digital 🚀</span>
         </motion.h1>
         <motion.p
           className="hero-desc"
