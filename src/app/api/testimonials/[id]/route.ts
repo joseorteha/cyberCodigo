@@ -1,12 +1,12 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextResponse } from 'next/server';
 
-// DEFINIMOS EL TIPO AQUÍ ARRIBA
-interface RouteContext {
+// Define a non-conflicting type for the context
+type ApiRouteContext = {
   params: {
     id: string;
   };
-}
+};
 
 // Crear el cliente de Supabase con la clave de servicio para tener permisos de administrador
 const supabaseAdmin = createClient(
@@ -17,8 +17,11 @@ const supabaseAdmin = createClient(
 /**
  * Maneja la actualización (aprobación) de un testimonio.
  */
-export async function PATCH(request: Request, context: RouteContext) { // <-- USAMOS EL TIPO AQUÍ
-  const { id } = context.params;
+export async function PATCH(
+  request: Request,
+  { params }: ApiRouteContext
+) {
+  const { id } = params;
 
   try {
     const { error } = await supabaseAdmin
@@ -38,11 +41,14 @@ export async function PATCH(request: Request, context: RouteContext) { // <-- US
 /**
  * Maneja la eliminación de un testimonio y su imagen asociada.
  */
-export async function DELETE(request: Request, context: RouteContext) { // <-- Y USAMOS EL TIPO AQUÍ
-  const { id } = context.params;
+export async function DELETE(
+  request: Request,
+  { params }: ApiRouteContext
+) {
+  const { id } = params;
 
   try {
-    // ... el resto de la función se queda igual
+    // Primero, obtenemos la URL de la imagen del testimonio que vamos a borrar.
     const { data: testimonialData, error: selectError } = await supabaseAdmin
       .from('testimonials')
       .select('image_url')
@@ -51,12 +57,14 @@ export async function DELETE(request: Request, context: RouteContext) { // <-- Y
 
     if (selectError) throw new Error('No se encontró el testimonio para eliminar la imagen.');
 
+    // Si hay una imagen, la eliminamos del almacenamiento.
     if (testimonialData?.image_url) {
       const imageUrl = testimonialData.image_url;
       const fileName = imageUrl.substring(imageUrl.lastIndexOf('/') + 1);
       await supabaseAdmin.storage.from('testimonials').remove([fileName]);
     }
 
+    // Luego, eliminamos el testimonio de la base de datos.
     const { error: deleteError } = await supabaseAdmin
       .from('testimonials')
       .delete()
