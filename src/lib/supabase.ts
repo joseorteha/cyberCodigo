@@ -21,4 +21,16 @@ export interface NewTestimonial {
   title: string
   quote: string
   image_url: string
+}
+
+export interface Post {
+  id: number;
+  created_at: string;
+  title: string;
+  content: string;
+  slug: string;
+  excerpt: string;
+  author: string;
+  is_published: boolean;
+  image_url?: string;
 } 

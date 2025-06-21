@@ -1,45 +1,53 @@
-# Cyber Código - Sitio Web Oficial
+<div align="center">
+  <img src="public/LOGO.jpg" alt="Cyber Código Logo" width="120" />
+  <h1>Cyber Código - Landing Page</h1>
+  <p>El sitio web oficial de <strong>Cyber Código</strong>, una agencia de desarrollo web enfocada en crear soluciones digitales de alto impacto para negocios y startups.</p>
+</div>
 
-Este repositorio contiene el código fuente de la landing page oficial de **Cyber Código**, una startup de desarrollo web enfocada en ofrecer soluciones digitales de alto impacto para negocios. El proyecto fue transformado desde una versión inicial a un sitio web profesional, funcional y estéticamente pulido.
+<div align="center">
+
+[![Framework: Next.js](https://img.shields.io/badge/Framework-Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Lenguaje: TypeScript](https://img.shields.io/badge/Lenguaje-TypeScript-blue?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Estilos: SCSS](https://img.shields.io/badge/Estilos-SCSS-hotpink?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
+[![Backend: Supabase](https://img.shields.io/badge/Backend-Supabase-brightgreen?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.io/)
+[![Deployment: Netlify](https://img.shields.io/badge/Deployment-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://www.netlify.com/)
+
+</div>
+
+---
+
+Este repositorio contiene el código fuente de la landing page de **Cyber Código**. Construido desde cero con un enfoque en rendimiento, estética y funcionalidad, este proyecto sirve como la principal carta de presentación digital de la agencia.
+
+**Visita la demo en vivo:** [**cybercodigo.com**](https://cybercodigo.netlify.app/) (¡Tu URL de producción aquí!)
 
 ## ✨ Características Principales
 
-A continuación se detallan las mejoras y características implementadas en el proyecto:
+-   **✍️ Gestor de Contenidos (CMS) con Supabase:**
+    -   **Blog Dinámico:** Sistema de blog completo con creación, edición y eliminación de artículos desde un panel de administración.
+    -   **Gestión de Testimonios:** Flujo de aprobación para testimonios de clientes, gestionado 100% desde el panel.
+-   **🔐 Panel de Administración Seguro:**
+    -   Ruta `/admin` protegida con sistema de login basado en sesiones (`iron-session`).
+    -   APIs seguras que utilizan claves de servicio para operaciones privilegiadas.
+-   **🎨 Diseño y Experiencia de Usuario (UX):**
+    -   **Modo Oscuro/Claro:** Selector de tema persistente en toda la aplicación.
+    -   **Menú Móvil Animado:** Menú hamburguesa elegante con animaciones fluidas.
+    -   **Animaciones Sutiles:** Transiciones y efectos de entrada con `framer-motion` para una sensación premium.
+-   **⚙️ Interactivo y Funcional:**
+    -   **Calculadora de Cotizaciones:** Herramienta interactiva para que los clientes estimen costos.
+    -   **Estudios de Caso Dinámicos:** Sección de portafolio que muestra proyectos detallados desde un archivo de datos.
+    -   **Sección de FAQ:** Componente de acordeón para preguntas frecuentes.
 
-### 🎨 Diseño y Experiencia de Usuario (UX)
+## 🛠️ Tech Stack
 
--   **Modo Oscuro Integral:** Se aplicó un tema oscuro coherente en todos los componentes del sitio, asegurando una estética elegante y una legibilidad óptima en condiciones de poca luz.
--   **Fondo de Patrón Global:** El fondo de puntitos (grid pattern) se extendió a toda la página para crear una identidad visual unificada y moderna.
--   **Botones Flotantes Optimizados:**
-    -   **WhatsApp:** Se mejoró el diseño del botón y se personalizó el mensaje predeterminado para facilitar el primer contacto.
-    -   **Selector de Tema:** Se reubicó en el header para un acceso más intuitivo y una mejor estructura del layout.
-
-### 🏗️ Arquitectura de Estilos y Migración
-
--   **SCSS Modular:** Se eliminó por completo TailwindCSS para adoptar una arquitectura de estilos basada exclusivamente en SCSS, organizando el código en módulos por componente para un mejor mantenimiento.
--   **Sintaxis Moderna:** Se actualizaron las importaciones de Sass a la sintaxis `@use`, resolviendo advertencias de deprecación y asegurando la compatibilidad futura del proyecto.
-
-### 📱 Layout Responsivo
-
--   **Eliminación de Márgenes:** Se corrigió el desbordamiento horizontal y los márgenes blancos no deseados mediante un reseteo de CSS y la propiedad `overflow-x: hidden`.
--   **Contenido Centrado y Legible:** Se implementó una estructura profesional donde los fondos de sección ocupan el 100% del ancho, mientras que el contenido principal se mantiene centrado con `max-width`, garantizando una experiencia de lectura cómoda en cualquier dispositivo.
--   **Espaciado en Móviles:** Se ajustó el espaciado en las cuadrículas de tarjetas para evitar que los elementos se vean demasiado juntos en pantallas pequeñas.
-
-### ✍️ Copywriting Estratégico
-
--   Se realizó una revisión completa de todos los textos del sitio (títulos, descripciones, llamadas a la acción) para comunicar de manera más efectiva la propuesta de valor de Cyber Código y proyectar una imagen más profesional y persuasiva.
-
-### ⚙️ Configuración de Desarrollo
-
--   Se optimizó el script de desarrollo en `package.json` para permitir el acceso al servidor desde la red local, facilitando las pruebas en dispositivos móviles durante el desarrollo.
-
-## 🛠️ Tecnologías Utilizadas
-
--   **Framework:** [Next.js](https://nextjs.org/)
--   **Lenguaje:** [TypeScript](https://www.typescriptlang.org/)
--   **Estilos:** [SCSS/Sass](https://sass-lang.com/)
--   **Animaciones:** [Framer Motion](https://www.framer.com/motion/)
--   **Linting:** [ESLint](https://eslint.org/)
+| Tecnología | Propósito |
+| :--- | :--- |
+| **Next.js** | Framework de React para renderizado del lado del servidor (SSR) y sitios estáticos (SSG). |
+| **TypeScript** | Superset de JavaScript para un tipado estático robusto y menos errores. |
+| **SCSS/Sass** | Preprocesador de CSS para estilos modulares, anidados y mantenibles. |
+| **Supabase** | Backend como servicio (BaaS) para la base de datos (PostgreSQL), autenticación y APIs. |
+| **Framer Motion** | Biblioteca de animaciones para una experiencia de usuario fluida y declarativa. |
+| **Iron Session** | Gestión de sesiones seguras y encriptadas para el panel de administración. |
+| **Netlify** | Plataforma de despliegue para aplicaciones web modernas. |
 
 ## 🚀 Cómo Empezar
 
@@ -47,21 +55,39 @@ Sigue estos pasos para levantar el proyecto en tu entorno local.
 
 ### Prerrequisitos
 
-Asegúrate de tener instalado [Node.js](https://nodejs.org/) (versión 18.x o superior) y un gestor de paquetes como `npm` o `yarn`.
+-   [Node.js](https://nodejs.org/) (versión 18.x o superior)
+-   `npm` o `yarn`
+-   Una cuenta y un proyecto en [Supabase](https://supabase.io/).
 
 ### Instalación
 
-1.  Clona el repositorio:
+1.  **Clona el repositorio:**
     ```sh
-    git clone https://github.com/joseorteha/cyberCodigo.git
+    git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.git
+    cd NOMBRE_DEL_REPOSITORIO
     ```
-2.  Navega al directorio del proyecto:
-    ```sh
-    cd cyberCodigo
-    ```
-3.  Instala las dependencias:
+
+2.  **Instala las dependencias:**
     ```sh
     npm install
+    ```
+
+3.  **Configura las variables de entorno:**
+    -   Crea un archivo llamado `.env.local` en la raíz del proyecto.
+    -   Copia el contenido de `.env.example` (o usa la siguiente plantilla) y rellénalo con tus propias claves de Supabase y una contraseña para el admin.
+
+    ```env
+    # .env.local
+
+    # Claves públicas de Supabase (seguras para exponer en el cliente)
+    NEXT_PUBLIC_SUPABASE_URL=TU_URL_DE_PROYECTO_SUPABASE
+    NEXT_PUBLIC_SUPABASE_ANON_KEY=TU_ANON_KEY_PUBLICA
+
+    # Clave de servicio de Supabase (¡MANTENER SECRETA!)
+    SUPABASE_SERVICE_ROLE_KEY=TU_SERVICE_ROLE_KEY_SECRETA
+
+    # Contraseña para el panel de /admin
+    ADMIN_PASSWORD="UNA_CONTRASEÑA_MUY_SEGURA"
     ```
 
 ### Ejecución
@@ -72,14 +98,4 @@ Asegúrate de tener instalado [Node.js](https://nodejs.org/) (versión 18.x o su
     ```
     Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el resultado.
 
--   Para acceder desde tu red local (por ejemplo, desde tu móvil):
-    ```sh
-    npm run dev -- --host
-    ```
-
-## 📜 Scripts Disponibles
-
--   `npm run dev`: Inicia la aplicación en modo de desarrollo.
--   `npm run build`: Compila la aplicación para producción.
--   `npm run start`: Inicia un servidor de producción.
--   `npm run lint`: Ejecuta el linter para analizar el código.
+¡Y listo! Ya tienes el proyecto corriendo en tu máquina local.

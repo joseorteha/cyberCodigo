@@ -1,0 +1,220 @@
+/* Estilos para la página de listado del Blog (/blog) */
+.blog-header {
+  text-align: center;
+  padding: 4rem 1rem 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.25rem;
+    color: var(--text-color-light, #555);
+  }
+  .dark & p {
+    color: #a0aec0;
+  }
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.blog-card {
+  background: var(--card-bg, #ffffff);
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid var(--border-color, #e5e7eb);
+  
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+}
+
+.dark .blog-card {
+  background: #161b22;
+  border-color: #30363d;
+}
+
+.blog-card-image-link {
+  display: block;
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #e5e7eb;
+}
+
+.dark .blog-card-image-link { background: #333; }
+.blog-card-img { object-fit: cover; }
+
+.blog-card-info {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color, #222);
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.blog-card-author {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+.dark .blog-card-author { color: #bbb; }
+
+.blog-card-button-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: auto;
+}
+
+/* Estilos para la página de un Post individual (/blog/[slug]) */
+
+.blog-post-container {
+  padding: 100px 0 4rem 0;
+}
+
+.blog-post-header {
+  text-align: center;
+  padding: 1rem 1rem 2rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    line-height: 1.1;
+  }
+}
+
+.blog-post-meta {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 1.5rem;
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+}
+.dark .blog-post-meta { color: #a0aec0; }
+
+.blog-post-hero-image {
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  position: relative;
+  aspect-ratio: 16 / 8;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.blog-post-content {
+  max-width: 750px;
+  margin: 2rem auto;
+  padding: 2rem 1rem;
+}
+
+.blog-post-body {
+  h2, h3, h4 {
+    font-weight: 700;
+    margin: 3rem 0 1.5rem 0;
+    line-height: 1.3;
+  }
+  h2 { font-size: 2rem; border-bottom: 1px solid var(--border-color, #e5e7eb); padding-bottom: 0.5rem; }
+  .dark h2 { border-color: #30363d; }
+  h3 { font-size: 1.5rem; }
+  h4 { font-size: 1.2rem; }
+
+  p, li {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--text-color-light, #374151);
+  }
+  
+  .dark & {
+    p, li { color: #d1d5db; }
+  }
+
+  p { margin-bottom: 1.5rem; }
+
+  a {
+    color: #6366f1;
+    text-decoration: none;
+    border-bottom: 2px solid rgba(99, 102, 241, 0.3);
+    transition: all 0.2s ease;
+    &:hover {
+      background-color: rgba(99, 102, 241, 0.1);
+      border-bottom-color: #6366f1;
+    }
+  }
+
+  ul, ol { margin: 0 0 1.5rem 1.5rem; }
+
+  blockquote {
+    border-left: 4px solid #a5b4fc;
+    padding: 1rem 1.5rem;
+    margin: 2.5rem 0;
+    background-color: var(--blockquote-bg, #f3f4f6);
+    p { 
+      margin-bottom: 0;
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+  }
+  .dark & blockquote { background-color: #1f2937; }
+
+  strong { font-weight: 700; }
+
+  pre {
+    background-color: #1f2937;
+    color: #d1d5db;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+    overflow-x: auto;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  pre code {
+    background-color: transparent;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  /* Inline code */
+  :not(pre) > code {
+    background-color: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    font-size: 0.9em;
+  }
+  .dark :not(pre) > code {
+    background-color: #3730a3;
+    color: #e0e7ff;
+  }
+} 

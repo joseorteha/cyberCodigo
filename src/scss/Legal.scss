@@ -11,10 +11,11 @@
 }
 
 .legal-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  padding: 2rem 1rem;
+  padding-top: 100px;
   background: var(--card-light);
-  padding: 2.5rem;
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   border: 1px solid var(--border-light);

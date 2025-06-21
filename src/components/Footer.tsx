@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import '../scss/Footer.scss';
 
 // SVG Icon Components for better reusability
 const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -46,28 +47,43 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Column 2: Contact */}
-          <div className="footer-contact">
-            <h3 className="footer-heading">Contacto</h3>
-            <ul className="footer-list">
-              <li><a href="mailto:codemasterdev@outlook.com" className="footer-link">codemasterdev@outlook.com</a></li>
-              <li><Link href={whatsappLink} target="_blank" className="footer-link">WhatsApp: +52 272-296-8204</Link></li>
-              <li><Link href={portfolioLink} target="_blank" className="footer-link">Portafolio</Link></li>
-            </ul>
+          {/* Column 2: Quick Form */}
+          <div className="footer-form">
+            <h3 className="footer-heading">¿Tienes un proyecto en mente?</h3>
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <input type="hidden" name="form-name" value="contact" />
+              <div style={{ display: "none" }}>
+                  <label>No llenes esto si eres humano: <input name="bot-field" /></label>
+              </div>
+              <input type="email" name="email" className="footer-input" placeholder="Tu correo electrónico" required />
+              <textarea name="message" className="footer-textarea" placeholder="Cuéntanos sobre tu idea..." required></textarea>
+              <button type="submit" className="footer-button">Enviar Mensaje</button>
+            </form>
           </div>
 
-          {/* Column 3: Social */}
-          <div className="footer-social">
-            <h3 className="footer-heading">Síguenos</h3>
-            <div className="footer-social-icons">
-              <Link href={facebookLink} target="_blank" className="footer-link"><FacebookIcon /></Link>
-              <Link href={instagramLink} target="_blank" className="footer-link"><InstagramIcon /></Link>
+          {/* Column 3: Contact & Social */}
+          <div className="footer-contact-social">
+            <div className="footer-contact">
+              <h3 className="footer-heading">Contacto</h3>
+              <ul className="footer-list">
+                <li><a href="mailto:codemasterdev@outlook.com" className="footer-link">codemasterdev@outlook.com</a></li>
+                <li><Link href={whatsappLink} target="_blank" className="footer-link">WhatsApp: +52 272-296-8204</Link></li>
+                <li><Link href={portfolioLink} target="_blank" className="footer-link">Portafolio</Link></li>
+              </ul>
+            </div>
+            <div className="footer-social">
+              <h3 className="footer-heading">Síguenos</h3>
+              <div className="footer-social-icons">
+                <Link href={facebookLink} target="_blank" className="footer-link"><FacebookIcon /></Link>
+                <Link href={instagramLink} target="_blank" className="footer-link"><InstagramIcon /></Link>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="footer-legal">
           <ul className="footer-legal-list">
+            <li><Link href="/nosotros" className="footer-legal-link">Sobre Nosotros</Link></li>
             <li><Link href="/aviso-privacidad" className="footer-legal-link">Aviso de Privacidad</Link></li>
             <li><Link href="/terminos-condiciones" className="footer-legal-link">Términos y Condiciones</Link></li>
           </ul>

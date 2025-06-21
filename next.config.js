@@ -4,15 +4,23 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'randomuser.me',
-        port: '',
-        pathname: '/api/portraits/**',
+        hostname: 'i.pravatar.cc',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
       },
       {
         protocol: 'https',
         hostname: 'jcuhtjbovyveuluqaqrg.supabase.co',
-        port: '',
-        pathname: '/storage/v1/object/public/testimonials/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cybercodigo.netlify.app',
+      },
+      {
+        protocol: 'https',
+        hostname: 'pixabay.com',
       },
     ],
   },

@@ -26,8 +26,9 @@
   text-align: center;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 2fr 3fr 2fr;
     text-align: left;
+    gap: 2.5rem;
   }
 }
 
@@ -60,10 +61,57 @@
 
 .footer-desc {
   color: #666;
-  max-width: 250px;
+  max-width: 300px;
+}
+
+.footer-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-input, .footer-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  margin-bottom: 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  background: #fff;
+  color: #222;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+  }
+}
+
+.footer-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.footer-button {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  font-size: 1rem;
+
+  &:hover {
+    background: #4f46e5;
+  }
 }
 
 .footer-contact {
+  margin-bottom: 2rem;
 }
 
 .footer-heading {
@@ -139,5 +187,20 @@
 .dark .footer-bottom {
   border-top: 1px solid #333;
   color: #bbb;
+}
+
+.dark .footer-desc {
+  color: #bbb;
+}
+
+.dark .footer-input, .dark .footer-textarea {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: #eee;
+}
+
+.footer-contact-social {
+  display: flex;
+  flex-direction: column;
 } 
 

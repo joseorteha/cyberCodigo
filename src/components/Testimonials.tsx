@@ -7,6 +7,33 @@ import { motion } from 'framer-motion';
 import { supabase, Testimonial } from '../lib/supabase';
 import '../scss/Testimonials.scss';
 
+// --- Skeleton Components ---
+const TestimonialSkeleton = () => (
+  <div className="testimonial-card skeleton">
+    <div className="skeleton-header">
+      <div className="skeleton-avatar"></div>
+      <div className="skeleton-header-text">
+        <div className="skeleton-line" style={{ width: '60%' }}></div>
+        <div className="skeleton-line" style={{ width: '40%' }}></div>
+      </div>
+    </div>
+    <div className="skeleton-content">
+      <div className="skeleton-line"></div>
+      <div className="skeleton-line"></div>
+      <div className="skeleton-line" style={{ width: '80%' }}></div>
+    </div>
+  </div>
+);
+
+const TestimonialsSkeleton = ({ count = 3 }) => (
+    <div className="testimonials-grid">
+        {Array.from({ length: count }).map((_, index) => (
+            <TestimonialSkeleton key={index} />
+        ))}
+    </div>
+);
+// --- End Skeleton Components ---
+
 interface TestimonialCardProps {
   quote: string;
   author: string;
@@ -108,7 +135,7 @@ const Testimonials = () => {
             <h2 className="testimonials-title">Historias de Éxito de Nuestros Clientes</h2>
             <p className="testimonials-desc">La satisfacción y el crecimiento de nuestros socios son nuestra mejor carta de presentación.</p>
           </div>
-          <div className="loading">Cargando testimonios...</div>
+          <TestimonialsSkeleton count={3} />
         </div>
       </section>
     );

@@ -118,6 +118,7 @@ const Packages = () => {
 
   return (
     <>
+      <section className="packages-section" id="servicios"></section>
       <section className="packages-section">
         <div className="packages-container">
           <div className="packages-header">
