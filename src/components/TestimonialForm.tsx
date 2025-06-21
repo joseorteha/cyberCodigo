@@ -84,8 +84,9 @@ const TestimonialForm = () => {
         quote: '',
         image: null
       });
-    } catch (error: any) {
-      setMessage(`Hubo un error al enviar tu testimonio. Detalle: ${error.message}`);
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'Ocurrió un error desconocido';
+      setMessage(`Hubo un error al enviar tu testimonio. Detalle: ${message}`);
       console.error('Error submitting testimonial:', error);
     } finally {
       setIsSubmitting(false);

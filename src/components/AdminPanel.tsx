@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { supabase, Testimonial } from '../lib/supabase';
+import type { Testimonial } from '../lib/supabase';
 import Image from 'next/image';
 import '../scss/AdminPanel.scss';
 
@@ -23,9 +23,10 @@ const AdminPanel = () => {
       }
       const data = await response.json();
       setTestimonials(data);
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'Ocurrió un error desconocido';
       console.error('Error fetching testimonials:', error);
-      setMessage(`Error al cargar los testimonios: ${error.message}`);
+      setMessage(`Error al cargar los testimonios: ${message}`);
     } finally {
       setLoading(false);
     }
@@ -41,9 +42,10 @@ const AdminPanel = () => {
       
       setMessage(data.message);
       fetchTestimonials();
-    } catch (error: any) {
-      console.error('Error approving testimonial:', error);
-      setMessage(`Error al aprobar: ${error.message}`);
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'Ocurrió un error desconocido';
+      console.error('Error approving testimonial:', error); // <-- que diga "approving"
+      setMessage(`Error al aprobar: ${message}`); // <-- que diga "aprobar"
     }
   };
 
@@ -61,9 +63,10 @@ const AdminPanel = () => {
 
       setMessage(data.message);
       fetchTestimonials();
-    } catch (error: any) {
+    } catch (error: unknown) {
+      const message = error instanceof Error ? error.message : 'Ocurrió un error desconocido';
       console.error('Error deleting testimonial:', error);
-      setMessage(`Error al eliminar: ${error.message}`);
+      setMessage(`Error al eliminar: ${message}`);
     }
   };
 
@@ -129,7 +132,7 @@ const AdminPanel = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="quote">"{testimonial.quote}"</p>
+                  <p className="quote">&ldquo;{testimonial.quote}&rdquo;</p>
                   <div className="actions">
                     <button
                       onClick={() => approveTestimonial(testimonial.id)}
@@ -174,7 +177,7 @@ const AdminPanel = () => {
                       </p>
                     </div>
                   </div>
-                  <p className="quote">"{testimonial.quote}"</p>
+                  <p className="quote">&ldquo;{testimonial.quote}&rdquo;</p>
                   <div className="actions">
                     <button
                       onClick={() => deleteTestimonial(testimonial.id)}
