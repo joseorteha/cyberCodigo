@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import '../../scss/Legal.scss'; // Corregido: La ruta correcta es dos niveles arriba
+
 import Image from 'next/image';
 
 const NotFoundPage = () => {
