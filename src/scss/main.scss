@@ -23,55 +23,88 @@
 @use 'Nosotros';
 
 /* CSS Reset and Global Styles */
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: hidden; /* Evita el scroll horizontal */
-  box-sizing: border-box;
-  font-family: var(--font-sans), sans-serif;
+:root {
+  --font-sans: 'Poppins', sans-serif;
+  
+  // Light Theme
+  --primary-color: #2563eb;
+  --primary-color-translucent: rgba(37, 99, 235, 0.2);
+  --primary-color-translucent-light: rgba(37, 99, 235, 0.1);
+  --background: #f9fafb;
+  --card-background: #ffffff;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+}
+
+.dark {
+  // Dark Theme
+  --primary-color: #3b82f6; // Slightly brighter blue for dark mode
+  --primary-color-translucent: rgba(59, 130, 246, 0.2);
+  --primary-color-translucent-light: rgba(59, 130, 246, 0.1);
+  --background: #0d1117;
+  --card-background: #161b22;
+  --text-primary: #e5e7eb;
+  --text-secondary: #9ca3af;
+  --border-color: #30363d;
+}
+
+html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 body {
-  background-color: #ffffff;
-  background-image:
-    linear-gradient(0deg, transparent 24%, rgba(0, 0, 0, 0.05) 25%, rgba(0, 0, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.05) 75%, rgba(0, 0, 0, 0.05) 76%, transparent 77%, transparent),
-    linear-gradient(90deg, transparent 24%, rgba(0, 0, 0, 0.05) 25%, rgba(0, 0, 0, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 0, 0, 0.05) 75%, rgba(0, 0, 0, 0.05) 76%, transparent 77%, transparent);
-  background-size: 50px 50px;
-  color: #222;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  font-family: var(--font-sans), sans-serif;
+  background-color: var(--background);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
   position: relative;
   z-index: 1;
 }
 
+/* Rejilla sutil para el fondo */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image:
+    linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: -2;
+  opacity: 1;
+  transition: background-image 0.3s ease;
+}
+
+/* Brillos decorativos */
 body::before {
   content: '';
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.15), transparent 30%),
+  background-image: radial-gradient(circle at 80% 20%, var(--primary-color-translucent), transparent 30%),
                     radial-gradient(circle at 20% 80%, rgba(219, 39, 119, 0.15), transparent 30%);
   z-index: -1;
   opacity: 0.8;
   transition: opacity 0.3s;
 }
 
-.dark body {
-  background-color: #0d1117;
-  background-image:
-    linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent),
-    linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, 0.05) 25%, rgba(255, 255, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, 0.05) 75%, rgba(255, 255, 255, 0.05) 76%, transparent 77%, transparent);
-  color: #eee;
-}
-
 .dark body::before {
   opacity: 1;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
 }
 
 /* Forzamos que el body y la app ocupen toda la altura */
@@ -83,10 +116,6 @@ body, #__next {
 
 main {
   flex: 1; /* El contenido principal crece para ocupar el espacio */
-}
-
-:root {
-  --font-sans: 'Poppins', sans-serif;
 }
 
 // Media queries for responsiveness
