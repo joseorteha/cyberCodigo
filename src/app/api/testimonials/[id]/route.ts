@@ -12,9 +12,9 @@ const supabaseAdmin = createClient(
  */
 export async function PATCH(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
-  const { id } = params;
+  const { id } = context.params;
 
   try {
     const { error } = await supabaseAdmin
@@ -36,9 +36,9 @@ export async function PATCH(
  */
 export async function DELETE(
   request: Request,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
-  const { id } = params;
+  const { id } = context.params;
 
   try {
     // Primero, obtenemos la URL de la imagen del testimonio que vamos a borrar.
