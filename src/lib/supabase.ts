@@ -11,9 +11,11 @@ export interface Testimonial {
   name: string
   title: string
   quote: string
-  image_url: string
+  image_url?: string | null
   approved: boolean
   created_at: string
+  rating?: number
+  industry?: string
 }
 
 export interface NewTestimonial {
@@ -21,6 +23,8 @@ export interface NewTestimonial {
   title: string
   quote: string
   image_url: string
+  rating?: number
+  industry?: string
 }
 
 export interface Post {

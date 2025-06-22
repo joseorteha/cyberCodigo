@@ -9,15 +9,17 @@ const TestimonialForm = () => {
     name: '',
     title: '',
     quote: '',
+    rating: 5,
+    industry: 'servicios',
     image: null as File | null
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState('');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.type === 'number' ? Number(e.target.value) : e.target.value
     });
   };
 
@@ -70,6 +72,8 @@ const TestimonialForm = () => {
             name: formData.name,
             title: formData.title,
             quote: formData.quote,
+            rating: formData.rating,
+            industry: formData.industry,
             image_url: imageUrl,
             approved: false
           }
@@ -82,6 +86,8 @@ const TestimonialForm = () => {
         name: '',
         title: '',
         quote: '',
+        rating: 5,
+        industry: 'servicios',
         image: null
       });
     } catch (error: unknown) {
@@ -142,6 +148,41 @@ const TestimonialForm = () => {
               required
               placeholder="Ej: CEO de Mi Empresa, Emprendedor, etc."
             />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="industry">Tipo de negocio *</label>
+            <select
+              id="industry"
+              name="industry"
+              value={formData.industry}
+              onChange={handleInputChange}
+              required
+            >
+              <option value="restaurantes">Restaurantes</option>
+              <option value="servicios">Servicios</option>
+              <option value="comercio">Comercio</option>
+              <option value="salud">Salud</option>
+              <option value="educación">Educación</option>
+              <option value="automotriz">Automotriz</option>
+            </select>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="rating">Calificación *</label>
+            <select
+              id="rating"
+              name="rating"
+              value={formData.rating}
+              onChange={handleInputChange}
+              required
+            >
+              <option value={5}>⭐⭐⭐⭐⭐ Excelente (5 estrellas)</option>
+              <option value={4}>⭐⭐⭐⭐ Muy bueno (4 estrellas)</option>
+              <option value={3}>⭐⭐⭐ Bueno (3 estrellas)</option>
+              <option value={2}>⭐⭐ Regular (2 estrellas)</option>
+              <option value={1}>⭐ Malo (1 estrella)</option>
+            </select>
           </div>
 
           <div className="form-group">
