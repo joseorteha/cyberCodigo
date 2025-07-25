@@ -25,7 +25,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cyber Código - Desarrollo Web Profesional',
     description: 'Soluciones digitales a la medida para tu negocio.',
-    images: '/preview.png', 
+    images: [
+      {
+        url: '/preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'Cyber Código',
+      },
+    ],
   },
   icons: {
     icon: '/favico.ico',
