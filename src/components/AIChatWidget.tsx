@@ -101,7 +101,7 @@ export default function AIChatWidget() {
       {isOpen && (
         <div className="ai-chat-box">
           <div className="ai-chat-header">
-            <span>Asistente IA</span>
+            <span>Cyber Código IA</span>
             <button className="ai-chat-close" onClick={() => setIsOpen(false)} aria-label="Cerrar chat">×</button>
           </div>
           <div className="ai-chat-messages">
@@ -133,104 +133,6 @@ export default function AIChatWidget() {
           </form>
         </div>
       )}
-      <style jsx>{`
-        .ai-chat-widget {
-          position: fixed;
-          right: 24px;
-          bottom: 24px;
-          z-index: 9999;
-        }
-        .ai-chat-box {
-          width: 340px;
-          max-width: 95vw;
-          background: #181A20;
-          border-radius: 18px;
-          box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-          animation: fadeInUp .3s;
-        }
-        .ai-chat-header {
-          background: #007BFF;
-          color: #fff;
-          padding: 1rem;
-          font-weight: bold;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-        .ai-chat-close {
-          background: none;
-          border: none;
-          color: #fff;
-          font-size: 1.5rem;
-          cursor: pointer;
-        }
-        .ai-chat-messages {
-          flex: 1;
-          padding: 1rem;
-          background: #22242a;
-          overflow-y: auto;
-          max-height: 320px;
-        }
-        .ai-chat-msg {
-          margin-bottom: 0.7rem;
-          padding: 0.7rem 1rem;
-          border-radius: 12px;
-          max-width: 85%;
-          word-break: break-word;
-        }
-        .ai-chat-msg.bot {
-          background: #007BFF;
-          color: #fff;
-          align-self: flex-start;
-        }
-        .ai-chat-msg.user {
-          background: #00FFAB;
-          color: #181A20;
-          align-self: flex-end;
-        }
-        .ai-chat-msg.error {
-          background: #ff4d4f;
-          color: #fff;
-        }
-        .ai-chat-input-row {
-          display: flex;
-          border-top: 1px solid #22242a;
-          background: #181A20;
-        }
-        .ai-chat-input {
-          flex: 1;
-          border: none;
-          padding: 1rem;
-          background: transparent;
-          color: #fff;
-          font-size: 1rem;
-        }
-        .ai-chat-send {
-          background: #00FFAB;
-          color: #181A20;
-          border: none;
-          padding: 0 1.2rem;
-          font-weight: bold;
-          cursor: pointer;
-          border-radius: 0 0 18px 0;
-          transition: background 0.2s;
-        }
-        .ai-chat-send:disabled {
-          background: #444;
-          color: #aaa;
-          cursor: not-allowed;
-        }
-        @keyframes fadeInUp {
-          from { transform: translateY(40px); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
-        }
-        @media (max-width: 500px) {
-          .ai-chat-box { width: 98vw; right: 0; left: 0; bottom: 0; border-radius: 0; }
-        }
-      `}</style>
     </div>
   );
 } 
