@@ -54,8 +54,9 @@ const Hero = () => {
 
   return (
     <section className="hero-section">
-      {/* El fondo de puntitos ahora es global */}
-      {/* <div className="hero-bg-grid"></div> */}
+      {/* Fondo animado: gradiente y partículas */}
+      <div className="hero-animated-bg" />
+      <div className="hero-particles" />
 
       <motion.div
         className="hero-content"
@@ -99,16 +100,33 @@ const Hero = () => {
                 )}
               </span>
             ))}
+            {/* Emoji animado */}
+            <motion.span
+              className="hero-title-rocket"
+              initial={{ y: 0 }}
+              animate={{ y: [0, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 1.2, ease: "easeInOut" }}
+              style={{ display: 'inline-block', marginLeft: 8 }}
+            >
+              🚀
+            </motion.span>
           </div>
-          <span className="hero-title-suffix">en el Mundo Digital 🚀</span>
         </motion.h1>
         <motion.p
           className="hero-desc"
           variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.7, duration: 0.7 }}
         >
           En Cyber Código creamos páginas web de alto impacto para negocios y emprendedores en Zongolica. Atrae más clientes, luce profesional y potencia tu crecimiento.
         </motion.p>
-        <motion.div variants={itemVariants}>
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 1.1, duration: 0.7 }}
+        >
           <Link
             href={whatsappLink}
             target="_blank"
