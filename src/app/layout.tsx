@@ -5,6 +5,7 @@ import "./../scss/main.scss";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import AIChatWidget from "@/components/AIChatWidget";
 
 // Carga dinámica del componente que usa canvas y window
 const AnimatedBackground = dynamic(() => import('@/components/AnimatedBackground'), {
@@ -46,6 +47,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <WhatsAppButton />
+        <AIChatWidget />
       </body>
     </html>
   );

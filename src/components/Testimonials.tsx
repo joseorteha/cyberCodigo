@@ -42,7 +42,7 @@ const TestimonialSkeleton = () => (
 const TestimonialsSkeleton = ({ count = 3 }) => (
     <div className="testimonials-grid">
         {Array.from({ length: count }).map((_, index) => (
-            <TestimonialSkeleton key={index} />
+            <TestimonialSkeleton key={`skeleton-${index}`} />
         ))}
     </div>
 );
@@ -319,7 +319,7 @@ const Testimonials = () => {
           <div className="carousel-container">
             <AnimatePresence mode="wait">
               <motion.div
-                key={currentSlide}
+                key={filteredTestimonials[currentSlide]?.id || currentSlide}
                 className="carousel-slide"
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -354,9 +354,9 @@ const Testimonials = () => {
 
         {/* Indicadores del carrusel */}
         <div className="carousel-indicators">
-          {filteredTestimonials.map((_, index) => (
+          {filteredTestimonials.map((t, index) => (
             <button
-              key={index}
+              key={t.id || index}
               className={`indicator ${currentSlide === index ? 'active' : ''}`}
               onClick={() => goToSlide(index)}
             />
