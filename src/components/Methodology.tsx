@@ -303,7 +303,7 @@ const Methodology = () => {
           <h3>¿Listo para Empezar?</h3>
             <p className="contact-subtitle">El siguiente paso para tu negocio está a un clic de distancia.</p>
             <a 
-              href="https://wa.me/522722884803?text=Hola%20Cyber%20C%C3%B3digo,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20c%C3%B3mo%20pueden%20ayudar%20a%20mi%20negocio." 
+              href="https://wa.me/522296486437?text=Hola%20Cyber%20C%C3%B3digo,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20c%C3%B3mo%20pueden%20ayudar%20a%20mi%20negocio." 
               className="whatsapp-button"
               target="_blank"
               rel="noopener noreferrer"

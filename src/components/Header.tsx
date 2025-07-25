@@ -44,7 +44,7 @@ const Header = () => {
         <nav className="header-nav">
           <Link href="/" className="header-brand" onClick={() => isMenuOpen && toggleMenu()}>
             <Image 
-              src="/LOGO.jpg" 
+              src="/LOGO.svg" 
               alt="Cyber Código Logo" 
               width={40} 
               height={40} 

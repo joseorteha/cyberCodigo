@@ -1,7 +1,6 @@
 import Hero from "@/components/Hero";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Packages from "@/components/Packages";
-import QuoteCalculator from "@/components/QuoteCalculator";
 import Portfolio from "@/components/Portfolio";
 import Process from "@/components/Process";
 import Methodology from "@/components/Methodology";
@@ -19,7 +18,6 @@ export default function Home() {
       <Hero />
       <WhyChooseUs />
       <Packages />
-      <QuoteCalculator />
       <Portfolio />
       <Process />
       <Methodology />

@@ -20,7 +20,7 @@ const InstagramIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-const whatsappLink = "https://wa.me/522722968204?text=Hola%2C%20estoy%20interesado%20en%20una%20cotización.";
+const whatsappLink = "https://wa.me/522296486437?text=Hola%2C%20estoy%20interesado%20en%20una%20cotizaci%C3%B3n.";
 const portfolioLink = "https://jose-ortega-dev.netlify.app/";
 const facebookLink = "https://www.facebook.com/CyberCodigo";
 const instagramLink = "https://www.instagram.com/cybercodigo/";
@@ -39,7 +39,7 @@ const Footer = () => {
           {/* Column 1: Brand */}
           <div className="footer-brand">
             <Link href="/" className="footer-brand-link">
-              <Image src="/LOGO.jpg" alt="Cyber Código Logo" width={40} height={40} className="footer-logo" />
+              <Image src="/LOGO.svg" alt="Cyber Código Logo" width={40} height={40} className="footer-logo" />
               <span className="footer-title">Cyber Código</span>
             </Link>
             <p className="footer-desc">

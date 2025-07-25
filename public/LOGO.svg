@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320" height="320" viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="320" rx="48" fill="#181A20"/>
+  <!-- Ícono: C estilizada con chip y símbolo tech -->
+  <g>
+    <circle cx="100" cy="120" r="56" fill="#007BFF"/>
+    <path d="M120 120c0-11-9-20-20-20s-20 9-20 20 9 20 20 20" stroke="#00FFAB" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <!-- Chip lines -->
+    <rect x="70" y="80" width="6" height="16" rx="3" fill="#00FFAB"/>
+    <rect x="124" y="80" width="6" height="16" rx="3" fill="#00FFAB"/>
+    <rect x="70" y="144" width="6" height="16" rx="3" fill="#00FFAB"/>
+    <rect x="124" y="144" width="6" height="16" rx="3" fill="#00FFAB"/>
+    <!-- Símbolo </> -->
+    <text x="90" y="128" font-family="monospace" font-size="28" fill="#fff" font-weight="bold">&lt;/&gt;</text>
+  </g>
+  <!-- Texto principal -->
+  <text x="170" y="130" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#fff" font-weight="bold" letter-spacing="1">Cyber</text>
+  <text x="170" y="170" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#00FFAB" font-weight="bold" letter-spacing="1">Código</text>
+  <!-- Versión solo texto -->
+  <text x="60" y="260" font-family="Segoe UI, Arial, sans-serif" font-size="28" fill="#fff" font-weight="bold">Cyber Código</text>
+</svg> 

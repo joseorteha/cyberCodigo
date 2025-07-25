@@ -71,7 +71,7 @@ const Packages = () => {
     }
     message += `Me gustaría recibir más información. ¡Gracias!`;
 
-    const whatsappLink = `https://wa.me/522722968204?text=${encodeURIComponent(message)}`;
+    const whatsappLink = `https://wa.me/522296486437?text=${encodeURIComponent(message)}`;
     
     window.open(whatsappLink, '_blank');
     handleCloseModal();

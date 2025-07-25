@@ -2,7 +2,7 @@
 import React from 'react';
 import '../scss/WhatsAppButton.scss';
 
-const whatsappLink = 'https://wa.me/522722968204?text=Hola%20Cyber%20C%C3%B3digo%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo%20web.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n.%20%C2%A1Gracias!';
+const whatsappLink = 'https://wa.me/522296486437?text=Hola%20Cyber%20C%C3%B3digo%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20desarrollo%20web.%20Me%20gustar%C3%ADa%20recibir%20m%C3%A1s%20informaci%C3%B3n.%20%C2%A1Gracias!';
 
 const WhatsAppButton = () => (
   <a
