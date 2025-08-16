@@ -9,36 +9,61 @@ import '../scss/Packages.scss';
 interface PackageProps {
   name: string;
   price: string;
+  originalPrice: string;
   features: string[];
   detailedFeatures: string[];
   benefits: string[];
   deliveryTime: string;
   isFeatured?: boolean;
+  isLimitedOffer?: boolean;
 }
 
-const PackageCard: React.FC<PackageProps & { onSelect: () => void }> = ({ name, price, features, isFeatured, onSelect }) => (
-  <div className={`package-card${isFeatured ? ' featured' : ''}`}>
-    {isFeatured && (
-      <div className="most-popular">MÁS POPULAR</div>
-    )}
-    <h3 className="package-title">{name}</h3>
-    <p className="package-price">{price}</p>
-    <ul className="package-features">
-      {features.map((feature, index) => (
-        <li key={index} className="feature-item">
-          <span className="check">✓</span>
-          {feature}
-        </li>
-      ))}
-    </ul>
-    <button className="choose-plan-btn" onClick={onSelect}>Ver Detalles</button>
-  </div>
-);
+const PackageCard: React.FC<PackageProps & { onSelect: () => void }> = ({ name, price, originalPrice, features, isFeatured, isLimitedOffer, onSelect }) => {
+  const calculateSavings = () => {
+    const original = parseInt(originalPrice?.replace(/[^0-9]/g, '') || '0');
+    const current = parseInt(price?.replace(/[^0-9]/g, '') || '0');
+    return original - current;
+  };
+
+  const formatNumber = (num: number) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
+
+  return (
+    <div className={`package-card${isFeatured ? ' featured' : ''}`}>
+      {isFeatured && (
+        <div className="most-popular">MÁS POPULAR</div>
+      )}
+      {isLimitedOffer && (
+        <div className="limited-offer">🔥 OFERTA LIMITADA</div>
+      )}
+      <h3 className="package-title">{name}</h3>
+      <div className="package-pricing">
+        <p className="package-price-original">{originalPrice}</p>
+        <p className="package-price">{price}</p>
+        <p className="package-savings">¡Ahorras {formatNumber(calculateSavings())} MXN!</p>
+      </div>
+      <ul className="package-features">
+        {features.map((feature, index) => (
+          <li key={index} className="feature-item">
+            <span className="check">✓</span>
+            {feature}
+          </li>
+        ))}
+      </ul>
+      <button className="choose-plan-btn" onClick={onSelect}>Ver Detalles</button>
+    </div>
+  );
+};
 
 const Packages = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<PackageProps | null>(null);
   const [showContactForm, setShowContactForm] = useState(false);
+
+  const formatNumber = (num: number) => {
+    return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  };
 
   const handleOpenModal = (pkg: PackageProps) => {
     setSelectedPlan(pkg);
@@ -80,7 +105,8 @@ const Packages = () => {
   const packages: PackageProps[] = [
     { 
       name: 'Plan Despegue', 
-      price: '$999 MXN', 
+      price: '$2,497 MXN',
+      originalPrice: '$3,200 MXN',
       features: [
         'Landing Page de Alto Impacto',
         'Diseño Moderno y Adaptable',
@@ -107,11 +133,13 @@ const Packages = () => {
         'Soporte técnico durante el primer mes',
         'Capacitación básica para gestionar tu contenido'
       ],
-      deliveryTime: '5-7 días hábiles'
+      deliveryTime: '5-7 días hábiles',
+      isLimitedOffer: true
     },
     { 
       name: 'Plan Crecimiento', 
-      price: '$1,499 MXN', 
+      price: '$3,997 MXN',
+      originalPrice: '$5,500 MXN',
       features: [
         'Sitio Web Completo (hasta 5 secciones)',
         'Catálogo de Productos/Servicios',
@@ -141,11 +169,13 @@ const Packages = () => {
         'Capacitación completa para autogestión'
       ],
       deliveryTime: '10-12 días hábiles',
-      isFeatured: true 
+      isFeatured: true,
+      isLimitedOffer: true
     },
     { 
       name: 'Plan E-commerce', 
-      price: '$1,999 MXN', 
+      price: '$5,997 MXN',
+      originalPrice: '$8,000 MXN',
       features: [
         'Tienda Online Funcional',
         'Integración de Pagos (Stripe/MP)',
@@ -174,7 +204,8 @@ const Packages = () => {
         'Soporte técnico durante 3 meses',
         'Capacitación completa + manual de usuario'
       ],
-      deliveryTime: '15-18 días hábiles'
+      deliveryTime: '15-18 días hábiles',
+      isLimitedOffer: true
     },
   ];
 
@@ -228,8 +259,17 @@ const Packages = () => {
           >
             <motion.div variants={itemVariants} className="package-details-header">
               <h3 className="package-details-title">{selectedPlan.name}</h3>
-              <p className="package-details-price">{selectedPlan.price}</p>
+              <div className="package-details-pricing">
+                <p className="package-details-price-original">{selectedPlan.originalPrice}</p>
+                <p className="package-details-price">{selectedPlan.price}</p>
+                <p className="package-details-savings">
+                  ¡Ahorras {formatNumber(parseInt(selectedPlan.originalPrice?.replace(/[^0-9]/g, '') || '0') - parseInt(selectedPlan.price?.replace(/[^0-9]/g, '') || '0'))} MXN!
+                </p>
+              </div>
               <p className="package-details-delivery">Entrega en {selectedPlan.deliveryTime}</p>
+              {selectedPlan.isLimitedOffer && (
+                <div className="limited-offer-badge">🔥 OFERTA POR TIEMPO LIMITADO</div>
+              )}
             </motion.div>
 
             <motion.div variants={itemVariants} className="package-details-content">

@@ -19,8 +19,8 @@ export default function Home() {
       <WhyChooseUs />
       <Packages />
       <Portfolio />
-      <Process />
       <Methodology />
+      <Process />
       <FAQ />
       <Extras />
       <Testimonials />

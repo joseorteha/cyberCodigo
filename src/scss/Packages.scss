@@ -75,6 +75,25 @@
   border-radius: 999px;
 }
 
+.limited-offer {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: linear-gradient(45deg, #ff6b35, #ff8e53);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
 .package-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -82,11 +101,33 @@
   margin-bottom: 1rem;
 }
 
+.package-pricing {
+  margin-bottom: 1.5rem;
+}
+
+.package-price-original {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #999;
+  text-decoration: line-through;
+  margin-bottom: 0.2rem;
+}
+
 .package-price {
   font-size: 2.2rem;
   font-weight: 800;
-  color: #222;
-  margin-bottom: 1.5rem;
+  color: #2563eb;
+  margin-bottom: 0.3rem;
+}
+
+.package-savings {
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #059669;
+  background: #d1fae5;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  display: inline-block;
 }
 
 .package-features {
@@ -146,7 +187,17 @@
   color: #fff;
 }
 .dark .package-price {
-  color: #fff;
+  color: #60a5fa;
+}
+
+.dark .package-savings {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.1);
+}
+
+.dark .package-details-savings {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.1);
 }
 .dark .choose-plan-btn {
   background: #2563eb;
@@ -337,11 +388,46 @@
     }
   }
   
+  .package-details-pricing {
+    margin-bottom: 1rem;
+  }
+
+  .package-details-price-original {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #999;
+    text-decoration: line-through;
+    margin-bottom: 0.3rem;
+  }
+  
   .package-details-price {
     font-size: 2rem;
     font-weight: 700;
     color: var(--primary-color);
+    margin-bottom: 0.3rem;
+  }
+
+  .package-details-savings {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #059669;
+    background: #d1fae5;
+    padding: 0.3rem 1rem;
+    border-radius: 999px;
+    display: inline-block;
     margin-bottom: 0.5rem;
+  }
+
+  .limited-offer-badge {
+    background: linear-gradient(45deg, #ff6b35, #ff8e53);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    display: inline-block;
+    margin-top: 0.5rem;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
   }
   
   .package-details-delivery {

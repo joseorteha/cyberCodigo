@@ -39,7 +39,7 @@ const Footer = () => {
           {/* Column 1: Brand */}
           <div className="footer-brand">
             <Link href="/" className="footer-brand-link">
-              <Image src="/LOGO.svg" alt="Cyber Código Logo" width={40} height={40} className="footer-logo" />
+              <Image src="/logo.jpg" alt="Cyber Código Logo" width={40} height={40} className="footer-logo" />
               <span className="footer-title">Cyber Código</span>
             </Link>
             <p className="footer-desc">

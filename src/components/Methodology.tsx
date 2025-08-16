@@ -2,319 +2,293 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Modal from './Modal';
 import '../scss/Methodology.scss';
 
 const Methodology = () => {
   const [activePhase, setActivePhase] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedStep, setSelectedStep] = useState(null);
 
   const phases = [
     {
       id: 1,
-      title: 'ENTREVISTA Y DIAGNÓSTICO',
-      objective: 'Conocer tu negocio, lo que haces, lo que necesitas y a dónde quieres llegar.',
-      questions: [
-        '¿Cómo se llama tu negocio?',
-        '¿Qué productos o servicios ofreces?',
-        '¿Tienes logo? ¿Tienes fotos?',
-        '¿Quieres que tus clientes puedan escribirte por WhatsApp?',
-        '¿Quieres que te encuentren en Google Maps?',
-        '¿Qué redes sociales usas?',
-        '¿Qué te gustaría que dijera tu página web?'
+      title: 'Platicamos',
+      icon: '💬',
+      objective: 'Conocemos tu negocio y lo que necesitas',
+      description: 'Una conversación sencilla por WhatsApp donde nos cuentas sobre tu negocio',
+      duration: '30 min',
+      highlights: [
+        'Sin compromisos',
+        'Gratis y sin letra chica',
+        'Te explicamos todo claramente'
       ],
-      duration: '30-45 minutos',
-      method: 'WhatsApp o en persona'
+      detailedInfo: {
+        fullDescription: 'En esta primera etapa nos enfocamos en conocerte a ti y a tu negocio. Es una plática relajada donde queremos entender exactamente qué necesitas.',
+        whatWeDiscuss: [
+          'El tipo de negocio que tienes',
+          'Qué quieres lograr con tu página web',
+          'Tu presupuesto disponible',
+          'Tus fechas importantes',
+          'Referencias de páginas que te gustan'
+        ],
+        whatYouGet: [
+          'Asesoría completamente gratuita',
+          'Respuestas a todas tus preguntas',
+          'Recomendaciones personalizadas',
+          'Tiempo estimado de desarrollo'
+        ]
+      }
     },
     {
       id: 2,
-      title: 'PROPUESTA Y PRESUPUESTO',
-      objective: 'Que sepas con claridad qué vas a recibir.',
-      deliverables: [
-        'Qué incluye tu página web',
-        'Cuánto cuesta',
-        'Cuánto tiempo tardaremos',
-        'Cómo se hace el pago'
+      title: 'Te Cotizamos',
+      icon: '💰',
+      objective: 'Precio claro y sin sorpresas',
+      description: 'Te enviamos una propuesta detallada con precio fijo',
+      duration: '24 hrs',
+      highlights: [
+        'Precio fijo, no cambia',
+        'Todo incluido por 1 año',
+        'Sin pagos ocultos'
       ],
-      duration: '24-48 horas',
-      method: 'Documento o mensaje detallado'
+      detailedInfo: {
+        fullDescription: 'Después de conocer tu proyecto, preparamos una cotización detallada con todo lo que incluye tu página web.',
+        whatWeDiscuss: [
+          'Precio final fijo (no cambia)',
+          'Todo lo que incluye el proyecto',
+          'Formas de pago disponibles',
+          'Tiempo de entrega exacto',
+          'Garantías y soporte incluido'
+        ],
+        whatYouGet: [
+          'Cotización por escrito',
+          'Desglose de servicios incluidos',
+          'Opciones de pago cómodas',
+          'Contrato transparente'
+        ]
+      }
     },
     {
       id: 3,
-      title: 'DESARROLLO Y DISEÑO',
-      objective: 'Construir tu página web, bonita, funcional y lista para mostrar a tus clientes.',
-      steps: [
-        'Te mostramos cómo va quedando (en privado)',
-        'Hacemos los ajustes necesarios',
-        'Dejamos todo listo para publicarla'
+      title: 'Creamos tu Web',
+      icon: '🎨',
+      objective: 'Diseñamos y programamos tu página',
+      description: 'Te vamos mostrando como queda y hacemos los cambios que quieras',
+      duration: '5-15 días',
+      highlights: [
+        'Ves el progreso diario',
+        'Cambios ilimitados',
+        'Diseño único para ti'
       ],
-      duration: '5-14 días',
-      method: 'Desarrollo iterativo'
+      detailedInfo: {
+        fullDescription: 'Esta es la parte emocionante donde tu idea se convierte en realidad. Te mantenemos informado de cada avance.',
+        whatWeDiscuss: [
+          'Colores y estilo de tu marca',
+          'Fotos y contenido a incluir',
+          'Funcionalidades especiales',
+          'Ajustes y cambios que quieras',
+          'Revisiones periódicas del avance'
+        ],
+        whatYouGet: [
+          'Actualizaciones diarias del progreso',
+          'Vista previa en tiempo real',
+          'Cambios ilimitados durante el desarrollo',
+          'Diseño 100% personalizado',
+          'Optimizado para móviles'
+        ]
+      }
     },
     {
       id: 4,
-      title: 'ENTREGA FINAL',
-      objective: 'Que tu página web esté activa y puedas compartirla con quien tú quieras.',
-      includes: [
-        'Hosting (espacio en internet) por 1 año',
-        'Dominio (por ejemplo: www.tunegocio.com) por 1 año',
-        'Tu página funcionando correctamente'
-      ],
+      title: 'Tu Web Lista',
+      icon: '🚀',
+      objective: 'Tu página ya está en internet',
+      description: 'Activamos todo y tu página web ya está lista para recibir clientes',
       duration: '1 día',
-      method: 'Activación y configuración'
-    },
-    {
-      id: 5,
-      title: 'SOPORTE Y MANTENIMIENTO',
-      objective: 'Acompañarte si necesitas ayuda después.',
-      support: [
-        '30 días de soporte gratuito para cualquier duda o problema',
-        'Planes de mantenimiento por si quieres que sigamos apoyándote'
+      highlights: [
+        'Hosting incluido',
+        'Dominio incluido',
+        'Listo para compartir'
       ],
-      duration: '30 días mínimo',
-      method: 'Soporte continuo'
+      detailedInfo: {
+        fullDescription: 'El momento final donde tu página web sale al mundo. Configuramos todo para que esté perfecta desde el primer día.',
+        whatWeDiscuss: [
+          'Activación del dominio (.com)',
+          'Configuración del hosting',
+          'Pruebas finales de funcionamiento',
+          'Capacitación para usar tu página',
+          'Entrega de accesos y contraseñas'
+        ],
+        whatYouGet: [
+          'Página web 100% funcional',
+          'Dominio y hosting por 1 año',
+          'Manual de uso básico',
+          'Soporte técnico inicial',
+          'Respaldos automáticos'
+        ]
+      }
     }
   ];
 
-  const packages = [
+  const whyChooseUs = [
     {
-      name: 'BÁSICO',
-      price: 999,
-      features: [
-        '1 página informativa',
-        'Botón a WhatsApp',
-        'Hosting + dominio 1 año',
-        'Diseño responsivo (celulares y computadoras)'
-      ]
+      title: 'Somos de Aquí',
+      description: 'Conocemos tu negocio porque somos de Zongolica',
+      icon: '🏔️'
     },
     {
-      name: 'PROFESIONAL',
-      price: 1499,
-      features: [
-        'Hasta 3 secciones (inicio, servicios, contacto)',
-        'Galería de fotos',
-        'Redes sociales integradas',
-        'Mapa de ubicación'
-      ]
-    },
-    {
-      name: 'PREMIUM',
-      price: 1999,
-      features: [
-        'Todo lo anterior + formulario de contacto personalizado',
-        'Catálogo de productos o servicios',
-        'Integración opcional de cobros'
-      ]
-    }
-  ];
-
-  const values = [
-    {
-      title: 'Claridad',
-      description: 'Te explicamos todo en palabras simples.',
+      title: 'Precio Justo',
+      description: 'Sin precios inflados de las grandes ciudades',
       icon: '💡'
     },
     {
-      title: 'Cercanía',
-      description: 'Somos de Zongolica, como tú. Aquí no hay engaños.',
+      title: 'Te Acompañamos',
+      description: 'No te dejamos solo después de entregar',
       icon: '🤝'
     },
     {
-      title: 'Calidad',
-      description: 'No vendemos por vender. Creamos páginas que te representen.',
-      icon: '⭐'
-    },
-    {
-      title: 'Compromiso',
-      description: 'Si te va bien a ti, nos va bien a todos.',
-      icon: '🎯'
+      title: 'Resultados Reales',
+      description: 'Páginas que sí traen clientes nuevos',
+      icon: '📈'
     }
   ];
 
+  const handleStepClick = (step: any) => {
+    setSelectedStep(step);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setSelectedStep(null);
+  };
+
   return (
-    <section className="methodology-section">
+    <section className="methodology-section" id="como-trabajamos">
       <div className="methodology-container">
+        {/* Header simplificado */}
         <div className="methodology-header">
-          <h2 className="methodology-title">Nuestra Metodología de Trabajo</h2>
-          <p className="methodology-subtitle">Transformamos Ideas en Realidades Digitales para Negocios Locales</p>
-          <div className="methodology-location">
-            <span className="location-icon">📍</span>
-            <span>Zongolica, Veracruz</span>
-          </div>
-          <p className="methodology-tagline">"Llevando el talento de Zongolica al mundo digital"</p>
+          <h2 className="methodology-title">¿Cómo Trabajamos?</h2>
+          <p className="methodology-subtitle">4 pasos simples para tener tu página web</p>
         </div>
 
-        <div className="methodology-intro">
-          <h3>¿Quiénes Somos? Tu Vecino, Tu Aliado Digital.</h3>
-          <p>
-            En el corazón de las altas montañas de Zongolica, Veracruz, nace <strong>Cyber Código</strong>. No somos una agencia más; somos tus vecinos, y tenemos una misión: <strong>impulsar el talento de nuestra gente</strong> al mundo digital. Conocemos de cerca tu trabajo, tu esfuerzo y la calidad de lo que ofreces. Sabemos que el único ingrediente que falta es la visibilidad que internet puede darte.
-          </p>
-          <p>
-            Mientras las grandes ciudades acaparan el mercado digital, en nuestra sierra hay un potencial enorme esperando ser descubierto. Una página web profesional no es un lujo, es la herramienta que <strong>transforma curiosos en clientes</strong> y ventas locales en un alcance regional y nacional.
-          </p>
-          <p>
-            Estamos aquí para construir ese puente. Unimos tu tradición y tu trabajo con la tecnología necesaria para que tu voz se escuche más allá de las montañas. <strong>Tu éxito es el éxito de Zongolica</strong>.
-          </p>
-        </div>
-
-        <div className="methodology-phases">
-          <h3>Nuestra Forma de Trabajo: Clara y sin Rodeos</h3>
-          <p className="phases-intro">
-            Olvídate de términos técnicos y procesos complicados. Nuestra metodología está diseñada para ser <strong>transparente, directa y colaborativa</strong>. Hablamos tu idioma y nos enfocamos en resultados claros que puedas ver y medir. Así trabajamos:
-          </p>
-
-          <div className="phases-tabs">
-            {phases.map((phase, index) => (
-              <button
-                key={phase.id}
-                className={`phase-tab ${activePhase === index ? 'active' : ''}`}
-                onClick={() => setActivePhase(index)}
-              >
-                <span className="phase-number">FASE {phase.id}</span>
-                <span className="phase-title">{phase.title}</span>
-              </button>
-            ))}
-          </div>
-
-          <div className="phase-content">
+        {/* Proceso visual */}
+        <div className="process-timeline">
+          <div className="timeline-line"></div>
+          {phases.map((phase, index) => (
             <motion.div
-              key={activePhase}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="phase-details"
+              key={phase.id}
+              className={`timeline-step ${activePhase === index ? 'active' : ''}`}
+              onClick={() => handleStepClick(phase)}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              style={{ cursor: 'pointer' }}
             >
-              <div className="phase-header">
-                <h4>{phases[activePhase].title}</h4>
-                <div className="phase-meta">
-                  <span className="phase-duration">⏱️ {phases[activePhase].duration}</span>
-                  <span className="phase-method">📋 {phases[activePhase].method}</span>
-                </div>
+              <div className="step-number">
+                <span className="step-number-text">{phase.id}</span>
+                <span className="step-emoji">{phase.icon}</span>
               </div>
-
-              <div className="phase-objective">
-                <h5>Objetivo:</h5>
-                <p>{phases[activePhase].objective}</p>
-              </div>
-
-              {phases[activePhase].questions && (
-                <div className="phase-questions">
-                  <h5>¿Qué te preguntaremos?</h5>
-                  <ul>
-                    {phases[activePhase].questions?.map((question, index) => (
-                      <li key={index}>{question}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {phases[activePhase].deliverables && (
-                <div className="phase-deliverables">
-                  <h5>Te enviaremos:</h5>
-                  <ul>
-                    {phases[activePhase].deliverables?.map((deliverable, index) => (
-                      <li key={index}>{deliverable}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {phases[activePhase].steps && (
-                <div className="phase-steps">
-                  <h5>Trabajamos por partes:</h5>
-                  <ol>
-                    {phases[activePhase].steps?.map((step, index) => (
-                      <li key={index}>{step}</li>
-                    ))}
-                  </ol>
-                </div>
-              )}
-
-              {phases[activePhase].includes && (
-                <div className="phase-includes">
-                  <h5>Incluye:</h5>
-                  <ul>
-                    {phases[activePhase].includes?.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {phases[activePhase].support && (
-                <div className="phase-support">
-                  <h5>Soporte:</h5>
-                  <ul>
-                    {phases[activePhase].support?.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </motion.div>
-          </div>
-        </div>
-
-        <div className="methodology-packages">
-          <h3>PAQUETES DISPONIBLES</h3>
-          <div className="packages-grid">
-            {packages.map((pkg, index) => (
-              <motion.div
-                key={pkg.name}
-                className="package-card"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="package-header">
-                  <h4>{pkg.name}</h4>
-                  <div className="package-price">${pkg.price} MXN</div>
-                </div>
-                <ul className="package-features">
-                  {pkg.features.map((feature, featureIndex) => (
-                    <li key={featureIndex}>{feature}</li>
+              <div className="step-content">
+                <h3 className="step-title">{phase.title}</h3>
+                <p className="step-description">{phase.description}</p>
+                <div className="step-duration">⏱️ {phase.duration}</div>
+                <ul className="step-highlights">
+                  {phase.highlights.map((highlight, idx) => (
+                    <li key={idx}>{highlight}</li>
                   ))}
                 </ul>
-              </motion.div>
-            ))}
-          </div>
+                <div className="click-hint">👆 Click para más detalles</div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
-        <div className="methodology-values">
-          <h3>VALORES DE CYBER CÓDIGO</h3>
-          <div className="values-grid">
-            {values.map((value, index) => (
+        {/* Por qué elegirnos */}
+        <div className="why-choose-us">
+          <h3>¿Por Qué Cyber Código?</h3>
+          <div className="reasons-grid">
+            {whyChooseUs.map((reason, index) => (
               <motion.div
-                key={value.title}
-                className="value-card"
+                key={reason.title}
+                className="reason-card"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="value-icon">{value.icon}</div>
-                <h4>{value.title}</h4>
-                <p>{value.description}</p>
+                <div className="reason-icon">{reason.icon}</div>
+                <h4>{reason.title}</h4>
+                <p>{reason.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
 
-        <div className="methodology-contact">
+        {/* Call to action */}
+        <div className="methodology-cta">
           <h3>¿Listo para Empezar?</h3>
-            <p className="contact-subtitle">El siguiente paso para tu negocio está a un clic de distancia.</p>
-            <a 
-              href="https://wa.me/522296486437?text=Hola%20Cyber%20C%C3%B3digo,%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20c%C3%B3mo%20pueden%20ayudar%20a%20mi%20negocio." 
-              className="whatsapp-button"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              ¡Hablemos por WhatsApp!
-            </a>
-          <p className="methodology-signature">
-            <strong>Cyber Código</strong> - "De Zongolica para el mundo".
-          </p>
+          <p>Platiquemos sobre tu proyecto sin compromiso</p>
+          <a 
+            href="https://wa.me/522296486437?text=Hola%20Cyber%20C%C3%B3digo,%20quiero%20platicar%20sobre%20mi%20p%C3%A1gina%20web" 
+            className="cta-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            💬 Empezar Conversación
+          </a>
+          <p className="cta-note">📍 Desde Zongolica, Veracruz para todo México</p>
         </div>
       </div>
+
+      {/* Modal con información detallada */}
+      {modalOpen && selectedStep && (
+        <Modal isOpen={modalOpen} onClose={closeModal}>
+          <div className="step-modal-content">
+            <div className="modal-header">
+              <div className="modal-step-number">
+                <span className="modal-number">{(selectedStep as any).id}</span>
+                <span className="modal-emoji">{(selectedStep as any).icon}</span>
+              </div>
+              <h2 className="modal-title">{(selectedStep as any).title}</h2>
+              <p className="modal-objective">{(selectedStep as any).objective}</p>
+            </div>
+
+            <div className="modal-body">
+              <div className="modal-description">
+                <h3>¿En qué consiste?</h3>
+                <p>{(selectedStep as any).detailedInfo.fullDescription}</p>
+              </div>
+
+              <div className="modal-sections">
+                <div className="modal-section">
+                  <h4>💬 De qué hablamos:</h4>
+                  <ul>
+                    {(selectedStep as any).detailedInfo.whatWeDiscuss.map((item: any, idx: any) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="modal-section">
+                  <h4>🎁 Lo que recibes:</h4>
+                  <ul>
+                    {(selectedStep as any).detailedInfo.whatYouGet.map((item: any, idx: any) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div className="modal-duration">
+                <strong>⏱️ Tiempo estimado: {(selectedStep as any).duration}</strong>
+              </div>
+            </div>
+          </div>
+        </Modal>
+      )}
     </section>
   );
 };
